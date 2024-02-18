@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+.App {
+  text-align: center;
+  height: 100svh;
+  margin: 0;
+}
+
+.App-logo { 
+  padding-left: 3vmax;
+  width: 135px ;
+  height: 90px;
+}
+
+.App-header {
+  display: flex;
+  width: 100%;
+  height: 11vh;
+  justify-content: space-between;
+}
+.Login-form{
+  display: flex;
+  font-family: "Cabin", sans-serif;
+  padding: 100px 150px 50px 150px;
+  gap: 100px;
+  
+}
+
+.Login-form .Left-img img{ 
+  width: 140%;
+  height: 100%;
+}
+.Login-form .Right-stuff{
+  display: flex;
+  flex-direction: column;
+  padding:0 5dvw;
+  width: 100%;
+  gap: 1dvh;
+  align-items: center;
+}
+.Login-form .Rs-top{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.9svh;
+}
+.Login-form .Rs-middle{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Right-stuff .Rs-middle .First-half{
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.Right-stuff .Rs-middle .First-half label {
+  font-size: calc(10px + 0.5vw);
+  font-weight: 500;
+}
+.Right-stuff .Rs-middle .Second-half{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
