@@ -1,0 +1,48 @@
+#FadeOutEffect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    animation: fadeOut 4s forwards;
+    z-index: 9998; /* Lower z-index than the logo */
+}
+
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo-Img {
+    z-index: 9999;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 70px;
+    height: 80px;
+    animation: moveLogo 9s forwards;
+    transition: transform 5s ease-in-out;
+}
+
+@keyframes moveLogo {
+    0%, 30% {     
+        transform: translate(-50%, -50%) scale(6);
+    }
+    30%, 100% {
+        top: 0px;
+        left: 35px;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    0%,70% {
+        background-color: black;
+    }
+    70%,100% {
+        background-color: transparent;
+        display: none;
+    }
+}
