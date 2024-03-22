@@ -43,6 +43,8 @@ const ThreeComponent = () => {
         const loader = new GLTFLoader();
         // Create an instance of TrackballControls
         const controls = new TrackballControls(camera, renderer.domElement);
+        controls.noPan = true; // Disables panning
+        controls.noZoom = true; // Disables zooming
     //buffer adjustment
         
     // Load your 3D model
@@ -69,7 +71,7 @@ const ThreeComponent = () => {
             // center the model and adjust model position
             model.position.copy(boxCenter);
             model.position.y -= 3.2
-            model.rotation.y = Math.PI+0.1; // Rotate 180 degrees
+            model.rotation.y = Math.PI+0.3; // Rotate 180 degrees
             controls.target.copy(boxCenter);
             controls.update();
         },

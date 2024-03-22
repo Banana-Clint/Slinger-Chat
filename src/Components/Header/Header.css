@@ -41,4 +41,16 @@
     font-weight: bold;
     border: 4px solid #f63630;
 }
+.Navbar-List button:hover{
+    transform: scale(1.1);
+}
+@media only screen and (max-width:600px){
 
+    #Navbar-List_p{
+        display: none;
+    }
+    .Header-Wrapper{
+        justify-content: space-between;
+        padding-right: 30px;
+    }
+}

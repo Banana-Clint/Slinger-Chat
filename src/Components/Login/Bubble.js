@@ -14,7 +14,7 @@ const Bubble = () => {
     const DisplaySelf = (Delay) => {
         setTimeout(() => {
             const self = document.getElementById("Bubble");
-            self.style.display = "flex";
+            self.style.visibility = "visible";
             sestStartRendering(true)
         }, Delay);
     }
@@ -22,7 +22,7 @@ const Bubble = () => {
     const HideSelf = () => {
         setTimeout(() => {
             const self = document.getElementById("Bubble");
-            self.style.display = "none";
+            self.style.visibility = "hidden";
             // Move to the next text after hiding
             setTimeout(() => {  setIndex((prevIndex) => (prevIndex + 1) % text.length);
             // Display the bubble again for the next text
@@ -32,7 +32,7 @@ const Bubble = () => {
 
     return (
         <div id="Bubble" style={{
-            display: "none",
+            visibility:"hidden",
             minWidth: '260px',
             height: '60px',
             border: '8px solid #f63630',
@@ -46,7 +46,7 @@ const Bubble = () => {
             textAlign: "center",
             flexDirection: 'column',
             justifyContent: 'center',
-            marginBottom:"10px",
+            bottom:"18px",
             backgroundColor: "transparent",
             lineHeight: "25px",
             color:'white',
