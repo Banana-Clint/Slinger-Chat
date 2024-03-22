@@ -46,7 +46,7 @@ const Bubble = () => {
             textAlign: "center",
             flexDirection: 'column',
             justifyContent: 'center',
-            backgroundColor: "black",
+            backgroundColor: "transparent",
             lineHeight: "25px",
             color:'white',
             zIndex:"2100"
