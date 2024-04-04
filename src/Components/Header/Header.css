@@ -10,6 +10,7 @@
     padding: 0px 0px 0px 18px;
     background-color: transparent;
     text-transform: uppercase;
+   
 }
 
 .Navbar-List{
@@ -17,17 +18,17 @@
     align-items: center;
     gap: 15px;
     list-style: none;
-    padding-left: 130px;
+    padding-left: 222px;
 }
 .Navbar-List p{
-    font-size: 15px;
+    font-size: 13px;
     width: 100%;
     color: white;
     letter-spacing: 0.01rem;
     font-weight: bold; 
     line-height: 20px; 
 }
-.Navbar-List button{
+.Navbar-Button{
     background-color: transparent;
     color: white;
     line-height: 25px;
@@ -40,8 +41,10 @@
     text-transform: uppercase;
     font-weight: bold;
     border: 4px solid #f63630;
+
+   
 }
-.Navbar-List button:hover{
+.Navbar-Button:hover{
     transform: scale(1.1);
 }
 @media only screen and (max-width:600px){

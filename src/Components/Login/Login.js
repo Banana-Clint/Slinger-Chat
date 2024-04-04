@@ -6,7 +6,6 @@ import { useState } from 'react';
 import RegistrationForm from '../Registration/Registration.js';
 import axios from 'axios';
 import Header from "../Header/Header.js";
-import Bubble from "./Bubble.js";
 import Model1 from "../3DModels/Model1.js"
 
 
@@ -61,17 +60,17 @@ return(<div className="App">
           className="Login-Img">
      
      <Model1/>
-          <Bubble/></div>
+          </div>
 
       <div 
           className="Login-Form">
           <input
-          id='Login-Credentials'
+          id='Login-UserName'
           type= "text"
           placeholder={"Username"}
           onChange={(e)=>usernameChange(e.target.value)}/>
           <input 
-          id='Login-Credentials'
+          id='Login-PassWord'
           type= "password"
           placeholder={"Password"}
           onChange={(e)=>passwordChange(e.target.value)}/>
@@ -80,7 +79,7 @@ return(<div className="App">
           onClick={loginClick}>Login</button>
           <p>Don't have an account yet? <Router>
           <Link className='Link'
-          onClick={()=>setView('Registration')}>Sign up</Link></Router></p>
+          onClick={()=>setView('Registratione')}>Sign up</Link></Router></p>
         </div>
      </div>
 

@@ -22,15 +22,15 @@
     left: 50%; 
     width: 70px;
     height: 80px;
-    animation: moveLogo 9s forwards;
+    animation: moveLogo 6s forwards;
     transition: transform 5s ease-in-out;
 }
 
 @keyframes moveLogo {
-    0%, 30% {     
+    0%{     
         transform: translate(-50%, -50%) scale(6);
     }
-    30%, 100% {
+    100% {
         top: 0px;
         left: 35px;
         transform: translate(0, 0) scale(1);

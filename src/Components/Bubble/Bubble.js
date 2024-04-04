@@ -1,6 +1,6 @@
 import TextTyper from '../TextTyper/TextTyper';
 import React, { useEffect, useState } from 'react';
-
+import "./Bubble.css";
 const Bubble = () => {
     const [text, setText] = useState(["all men must server !", "Fear not ! young'un !", "My creator needs work...",
     "jeez!! somebody died in here?","smells like teen spirit!"]);
@@ -31,27 +31,7 @@ const Bubble = () => {
     }
 
     return (
-        <div id="Bubble" style={{
-            visibility:"hidden",
-            minWidth: '260px',
-            height: '60px',
-            border: '8px solid #f63630',
-            borderRadius: '7px',
-            padding: '10px 20px',
-            position: 'relative',
-            marginLeft: "-390px",
-            fontSize: "12px",
-            fontWeight: "bold",
-            textTransform: "uppercase",
-            textAlign: "center",
-            flexDirection: 'column',
-            justifyContent: 'center',
-            bottom:"18px",
-            backgroundColor: "transparent",
-            lineHeight: "25px",
-            color:'white',
-            zIndex:"2100"
-        }}>
+        <div id="Bubble">
             {startRendering && <p><TextTyper
                 key={index}
                 TextToType={text[index]}

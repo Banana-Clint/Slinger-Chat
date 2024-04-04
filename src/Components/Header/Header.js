@@ -28,12 +28,12 @@ export default function Header() {
                         <p id='Navbar-List_p'><TextTyper 
                         TextToType={fullText} 
                         onFinishedTyping={()=>{setShowButton(true); HideParagraph(3000)}}
-                        TypeDelay={2700}
+                        TypeDelay={3000}
                         TypeSpeed={50}/></p>
                     </li>
                     {showButton && (
                         <li>
-                            <button>Register</button>
+                            <button className='Navbar-Button'>Register</button>
                         </li>
                     )}
                 </ul>

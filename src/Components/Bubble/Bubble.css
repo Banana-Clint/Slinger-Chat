@@ -1,0 +1,41 @@
+#Bubble{
+    visibility:hidden;
+    min-width: 300px;
+    height: 60px;
+    border: 8px solid #f63630;
+    border-radius: 7px;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    line-height: 25px;
+    left:150px;
+    top:30px;
+    color:white;
+    z-index:2100;
+}
+@media only screen and (max-width:900px){
+    #Bubble{
+        transform:scale(0.8);
+        left: -20px;
+        top:10px;
+    }
+}
+@media only screen and (max-width:600px){
+    #Bubble{
+        transform:scale(0.8);
+        left: -80px;
+     
+    }
+}
+@media only screen and (max-width:350px){
+    #Bubble{
+        left: -100px;
+     
+    }
+}
