@@ -93,7 +93,17 @@
 
 }
 @media only screen and (max-width:600px){
-  .Login-Form { min-width: 85%};
+  .Login-Form {
+    max-width:95vw;
+     min-width: 0%;
+  
+  }
+  .Login-Form #Login-PassWord{
+    max-width:90%;
+  }
+  .Login-Form #Login-UserName{
+    max-width:90%;
+  }
 }
 
 
