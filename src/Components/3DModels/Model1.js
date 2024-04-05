@@ -1,7 +1,7 @@
 import React, { useEffect,useRef,useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import './Model1.css';
 import Bubble from "../Bubble/Bubble.js";
 
@@ -27,7 +27,7 @@ useEffect(() => {
         const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
         const configuredRenderer = rendererSetup(renderer);
         configuredRendererRef.current = configuredRenderer;
-        const newControls = new TrackballControls(configuredCamera, configuredRenderer.domElement);
+        const newControls = new OrbitControls(configuredCamera, configuredRenderer.domElement);
         controlsSetup(newControls);
         const scene = new THREE.Scene();
         const litScene = lightsSetup(scene);
@@ -35,13 +35,55 @@ useEffect(() => {
         async function loadAndAnimateModel() {
             const { loadedModel, loadedMixer } = await loadModel(newControls, litScene);
             loadedModelRef.current = loadedModel; 
-            animate(configuredRenderer, loadedModel, configuredCamera, litScene, loadedMixer);
+            animate(configuredRenderer, loadedModel, configuredCamera, litScene, loadedMixer,newControls);
          
             
         }
         loadAndAnimateModel();
         window.addEventListener('resize', handleResize);
+            function grim(){
+              let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
 
+    canvas.addEventListener('mousedown', (e) => {
+        isDragging = true;
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+        var deltaMove = {
+            x: e.offsetX - previousMousePosition.x,
+            y: e.offsetY - previousMousePosition.y
+        };
+
+        if (isDragging) {
+            var deltaRotationQuaternion = new THREE.Quaternion()
+                .setFromEuler(new THREE.Euler(
+                    toRadians(deltaMove.y * 1), // Angle rotation around X
+                    toRadians(deltaMove.x * 1), // Angle rotation around Y
+                    0,
+                    'XYZ'
+                ));
+
+            loadedModelRef.current.quaternion.multiplyQuaternions(deltaRotationQuaternion, loadedModelRef.current.quaternion);
+        }
+
+        previousMousePosition = {
+            x: e.offsetX,
+            y: e.offsetY
+        };
+    });
+
+    canvas.addEventListener('mouseup', (e) => {
+        isDragging = false;
+    });
+
+    // Helper function to convert degree to radian
+    function toRadians(angle) {
+        return angle * (Math.PI / 180);
+    }
+
+            }
+            grim()
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -84,32 +126,13 @@ function handleResize() {
   currentWidthRef.current = newWidth;
 }
 
-      const animate = (renderer, model,camera,scene,mixer) => {
-        requestAnimationFrame(() => animate( renderer, model, camera,scene,mixer));
-      
-        // // Update the mixer on each frame
-        if (mixer) {
-          // Make the animation 1 second slower
-          mixer.timeScale = 1.2; // Adjust this value to get the desired speed
-          mixer.update(clock.getDelta());
-        }
-      
+ const controlsSetup = (newControls) => {
+    newControls.enableZoom = false; // Disable zooming
+    newControls.enablePan = false; // Disable panning
+     newControls.enableRotate=false
+    return newControls;
+};
 
-        // if (controls) {
-        //   controls.update(); // Update the controls in the animation loop
-        // }
-        if (renderer && scene && camera) {
-          renderer.render(scene, camera);
-        }
-      };
-      
-
-    const controlsSetup = (newControls) => {
-        newControls.noPan = true; // Disables panning
-        newControls.noZoom = true; // Disables zooming
-        newControls.noRotate = false; // Disables rotation
-        return newControls
-      };
 
     const rendererSetup = (newRenderer) => {
             newRenderer.setSize(window.innerWidth, window.innerHeight);
@@ -120,6 +143,30 @@ function handleResize() {
             console.log("renderer up")
             return newRenderer
           };
+
+
+
+     const animate = (renderer, model, camera, scene, mixer, controls) => {
+    requestAnimationFrame(() => animate(renderer, model, camera, scene, mixer, controls));
+    controls.update();
+
+    // Rotate the model around its Y-axis
+    if (model) {
+        model.rotation.y += 0.003; // Adjust this value to get the desired speed
+    }
+
+    // Update the mixer on each frame
+    if (mixer) {
+        // Make the animation 1 second slower
+        mixer.timeScale = 1.2; // Adjust this value to get the desired speed
+        mixer.update(clock.getDelta());
+    }
+
+    if (renderer && scene && camera) {
+        renderer.render(scene, camera);
+    }
+};
+      
 
 
 
@@ -144,7 +191,7 @@ function handleResize() {
                   if(currentWidthRef.current<=900) 
                   {
                     if(currentWidthRef.current<=450){
-                      loadedModel.position.y -= 1;
+                      loadedModel.position.y -= 2;
                       loadedModel.position.x = -1;
                     loadedModel.rotation.y += .5;
                     }else{
