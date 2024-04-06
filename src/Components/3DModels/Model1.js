@@ -71,6 +71,12 @@ useEffect(() => {
               };
         
               if (isDragging) {
+                // Check if the swipe is primarily vertical
+                if (Math.abs(deltaMove.y) > Math.abs(deltaMove.x)) {
+                  // Allow the default behavior (scrolling)
+                  return;
+                }
+        
                 var deltaRotationQuaternion = new THREE.Quaternion()
                   .setFromEuler(new THREE.Euler(
                     0, // No rotation around X
@@ -100,6 +106,7 @@ useEffect(() => {
             return angle * (Math.PI / 180);
           }
         }
+        
         
             grim()
         return () => {
