@@ -12,15 +12,15 @@ const ThreeComponent = () => {
       const configuredRendererRef = useRef();
       const configuredCameraRef = useRef();
       const loadedModelRef=useRef();
-      const currentWidthRef=useRef(window.innerWidth);
-      const firstResizeRef=useRef(true);
-      const firstSmallToBigResizeRef=useRef(false);
 
 useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas) {
         console.log('canvas up');
-        const fov = 80, aspect = window.innerWidth / window.innerHeight, near = 2, far = 1000;
+        const parent=canvas.parentElement;
+        const parentWidth = parent.clientWidth;
+        const parentHeight = parent.clientHeight;
+        const fov = 87, aspect = parentWidth/ parentHeight*0.75, near = 2, far = 1000;
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
         const configuredCamera = cameraSetup(camera);
         configuredCameraRef.current = configuredCamera;
@@ -40,90 +40,78 @@ useEffect(() => {
             
         }
         loadAndAnimateModel();
-        window.addEventListener('resize', handleResize);
-            function grim(){
-              let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
-
-    canvas.addEventListener('mousedown', (e) => {
-        isDragging = true;
-    });
-
-    canvas.addEventListener('mousemove', (e) => {
-        var deltaMove = {
-            x: e.offsetX - previousMousePosition.x,
-            y: e.offsetY - previousMousePosition.y
-        };
-
-        if (isDragging) {
-            var deltaRotationQuaternion = new THREE.Quaternion()
-                .setFromEuler(new THREE.Euler(
-                    toRadians(deltaMove.y * 1), // Angle rotation around X
+        window.addEventListener('resize', handleResize(aspect));
+        function grim() {
+          let isDragging = false;
+          let previousMousePosition = { x: 0, y: 0 };
+        
+          // Add event listeners for both mouse and touch events
+          ['mousedown', 'touchstart'].forEach(event => {
+            canvas.addEventListener(event, (e) => {
+              isDragging = true;
+            });
+          });
+        
+          ['mousemove', 'touchmove'].forEach(event => {
+            canvas.addEventListener(event, (e) => {
+              var clientX, clientY;
+        
+              // Check if this is a touch event
+              if (e.changedTouches) {
+                clientX = e.changedTouches[0].clientX;
+                clientY = e.changedTouches[0].clientY;
+              } else {
+                clientX = e.clientX;
+                clientY = e.clientY;
+              }
+        
+              var deltaMove = {
+                x: clientX - previousMousePosition.x,
+                y: clientY - previousMousePosition.y
+              };
+        
+              if (isDragging) {
+                var deltaRotationQuaternion = new THREE.Quaternion()
+                  .setFromEuler(new THREE.Euler(
+                    0, // No rotation around X
                     toRadians(deltaMove.x * 1), // Angle rotation around Y
                     0,
                     'XYZ'
-                ));
-
-            loadedModelRef.current.quaternion.multiplyQuaternions(deltaRotationQuaternion, loadedModelRef.current.quaternion);
+                  ));
+        
+                loadedModelRef.current.quaternion.multiplyQuaternions(deltaRotationQuaternion, loadedModelRef.current.quaternion);
+              }
+        
+              previousMousePosition = {
+                x: clientX,
+                y: clientY
+              };
+            });
+          });
+        
+          ['mouseup', 'touchend'].forEach(event => {
+            canvas.addEventListener(event, (e) => {
+              isDragging = false;
+            });
+          });
+        
+          // Helper function to convert degree to radian
+          function toRadians(angle) {
+            return angle * (Math.PI / 180);
+          }
         }
-
-        previousMousePosition = {
-            x: e.offsetX,
-            y: e.offsetY
-        };
-    });
-
-    canvas.addEventListener('mouseup', (e) => {
-        isDragging = false;
-    });
-
-    // Helper function to convert degree to radian
-    function toRadians(angle) {
-        return angle * (Math.PI / 180);
-    }
-
-            }
+        
             grim()
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize(aspect));
         };
     }
 }, []);
 
-function handleResize() {
-  const newWidth = window.innerWidth;
-  configuredRendererRef.current.setSize(newWidth, window.innerHeight);
-  configuredCameraRef.current.aspect = newWidth / window.innerHeight;
+function handleResize(aspect) {
+  configuredCameraRef.current.aspect = aspect;
   configuredCameraRef.current.updateProjectionMatrix();
-  if (newWidth < currentWidthRef.current) {
-    if(newWidth<=900 && firstResizeRef.current) 
-    {
-      firstSmallToBigResizeRef.current=false
-      loadedModelRef.current.position.x=2.5
-      loadedModelRef.current.position.y +=0.9;
-      configuredCameraRef.current.position.z =-6.5;
-      loadedModelRef.current.rotation.y -= 0.45; 
-      firstResizeRef.current=false;
-    }
-      configuredCameraRef.current.position.z -= 0.05;
-      loadedModelRef.current.position.x -=0.8
-  } else if (newWidth > currentWidthRef.current) {
-    if(currentWidthRef.current<=900 && newWidth>=900 && !firstSmallToBigResizeRef.current) {
-      firstSmallToBigResizeRef.current=true
-      
-      loadedModelRef.current.position.y -=0.9;
-      loadedModelRef.current.position.x=8;
-      loadedModelRef.current.rotation.y += 0.45; 
-      configuredCameraRef.current.position.z = -6.4;
-      firstResizeRef.current=true
-    }
-      configuredCameraRef.current.position.z += .15;
-      loadedModelRef.current.position.x -=0.02
-  }
 
-
-  // Update the current width for the next resize event
-  currentWidthRef.current = newWidth;
 }
 
  const controlsSetup = (newControls) => {
@@ -152,7 +140,7 @@ function handleResize() {
 
     // Rotate the model around its Y-axis
     if (model) {
-        model.rotation.y += 0.003; // Adjust this value to get the desired speed
+        model.rotation.y += 0.004; // Adjust this value to get the desired speed
     }
 
     // Update the mixer on each frame
@@ -188,25 +176,11 @@ function handleResize() {
                       let action = loadedMixer.clipAction(gltf.animations[1]);
                       action.play();
                   }
-                  if(currentWidthRef.current<=900) 
-                  {
-                    if(currentWidthRef.current<=450){
-                      loadedModel.position.y -= 2;
-                      loadedModel.position.x = -1;
-                    loadedModel.rotation.y += .5;
-                    }else{
-                  loadedModel.position.y -= 1.5;
-                    loadedModel.position.x =+1;
-                  loadedModel.rotation.y += .5;
-                    }
-                  }
-                  else{ 
-                  loadedModel.position.y -= 3;
-                  loadedModel.position.x += 8.5;
-                  loadedModel.rotation.y += 1.3;
-                  }
+           
+                  loadedModel.position.y -= 2.9;
+                  loadedModel.position.x =-0.1;
+                  loadedModel.rotation.y += .3;
                   controls.update();
-  
                   console.log("model loaded")
                   resolve({loadedModel, loadedMixer});
                   
@@ -221,7 +195,7 @@ function handleResize() {
   };
   
       const cameraSetup = (camera) => {
-        camera.position.z += 6.5 *-1; // Set the camera position
+        camera.position.z += 4 *-1; // Set the camera position
         console.log("camera up")
         return camera
         
@@ -248,9 +222,9 @@ function handleResize() {
       };
       
 
-    return <div>
+    return( <div className='Canvas-Wrapper'>
           <Bubble/>
         <canvas ref={canvasRef} ></canvas>
-         </div>
+         </div>)
         }
 export default ThreeComponent;

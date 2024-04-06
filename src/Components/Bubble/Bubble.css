@@ -15,21 +15,20 @@
     background-color: transparent;
     line-height: 25px;
     left:150px;
-    top:30px;
+    top:-10px;
     color:white;
     z-index:2100;
 }
 @media only screen and (max-width:900px){
     #Bubble{
-        transform:scale(0.8);
-        left: -20px;
+        transform:scale(0.95);
         top:10px;
     }
 }
 @media only screen and (max-width:600px){
     #Bubble{
-        transform:scale(0.8);
-        left: -80px;
+        transform:scale(0.9);
+        left: 40px;
         height: 60px;
         padding: 0;
      
@@ -38,9 +37,8 @@
 @media only screen and (max-width:400px){
     #Bubble{
         top:35px;
-        left: -50px;
-        transform: scale(0.8);
-        min-width: 220px;
+        width: 100%;
+        min-width: 0px;
         line-height: 18px;
     }
 }

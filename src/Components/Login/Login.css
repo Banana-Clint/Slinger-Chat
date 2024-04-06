@@ -14,7 +14,7 @@
   margin: 0;
 }
 .Login-Img{
-  max-width: 25%;
+  max-width: 23%;
 }
 .Login-Form {
   display: flex;
@@ -81,12 +81,13 @@
 
 @media only screen and (max-width:900px){
   .Login-Img{
-    max-height: 400px;
+    max-width: 60%;
     
   }
 
   .Login-Form_Wrapper{
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
   }
@@ -94,7 +95,7 @@
 }
 @media only screen and (max-width:600px){
   .Login-Form {
-    max-width:95%;
+    width:95%;
      min-width: 0%;
   
   }
@@ -104,6 +105,7 @@
   .Login-Form #Login-UserName{
     max-width:90%;
   }
+  .Login-Form button{ width: 80%;}
 }
 
 
