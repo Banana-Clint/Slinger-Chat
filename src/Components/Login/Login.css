@@ -113,5 +113,6 @@
   
   .Login-Img{
     max-width: 100%;
+    min-height: 520px;
   }
 }

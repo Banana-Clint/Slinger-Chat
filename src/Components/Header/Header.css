@@ -18,7 +18,7 @@
     align-items: center;
     gap: 15px;
     list-style: none;
-    padding-left: 222px;
+    padding-left: 265px;
 }
 .Navbar-List p{
     font-size: 13px;
@@ -54,7 +54,7 @@
     }
     .Header-Wrapper{
         justify-content: space-between;
-        padding-right: 5px;
+        padding-right: 30px;
 
     }
     .Navbar-List{
@@ -63,8 +63,8 @@
 }
 @media only screen and (max-width:400px){
     .Navbar-Button{
-        transform: scale(0.8);
-        padding: 10px 18px;
-        font-size: 12px;
+        padding: 10px 10px;
+        font-size: 11px;
+        max-width: 120px;
     }
 }

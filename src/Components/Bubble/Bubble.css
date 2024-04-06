@@ -36,8 +36,8 @@
 }
 @media only screen and (max-width:400px){
     #Bubble{
-        top:35px;
-        width: 100%;
+        top:10px;
+        width: 90%;
         left: 0px;
         min-width: 0px;
         line-height: 18px;

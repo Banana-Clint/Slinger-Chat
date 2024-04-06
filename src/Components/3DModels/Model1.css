@@ -18,6 +18,7 @@ canvas {
 
   @media only screen and (max-width:400px){
     
-    canvas { margin-top: -70px;}
+    canvas { margin-top: -70px;
+    transform: scale(0.9);}
 
   }
