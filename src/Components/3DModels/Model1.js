@@ -44,11 +44,18 @@ useEffect(() => {
         function grim() {
           let isDragging = false;
           let previousMousePosition = { x: 0, y: 0 };
+          let startTouchPosition = { x: 0, y: 0 };
         
           // Add event listeners for both mouse and touch events
           ['mousedown', 'touchstart'].forEach(event => {
             canvas.addEventListener(event, (e) => {
               isDragging = true;
+              if (e.changedTouches) { // Check if this is a touch event
+                startTouchPosition = {
+                  x: e.changedTouches[0].clientX,
+                  y: e.changedTouches[0].clientY
+                };
+              }
             });
           });
         
@@ -71,21 +78,33 @@ useEffect(() => {
               };
         
               if (isDragging) {
-                // Check if the swipe is primarily vertical
+        
+                // Handle vertical swipes (for scrolling)
                 if (Math.abs(deltaMove.y) > Math.abs(deltaMove.x)) {
-                  // Allow the default behavior (scrolling)
-                  return;
+                  // Check if this is a swipe down
+                  if (clientY > startTouchPosition.y) {
+                    // Scroll up
+                    window.scrollBy(0, -Math.abs(deltaMove.y));
+                  }
+                  // Check if this is a swipe up
+                  else if (clientY < startTouchPosition.y) {
+                    // Scroll down
+                    window.scrollBy(0, Math.abs(deltaMove.y));
+                  }
                 }
         
-                var deltaRotationQuaternion = new THREE.Quaternion()
-                  .setFromEuler(new THREE.Euler(
-                    0, // No rotation around X
-                    toRadians(deltaMove.x * 1), // Angle rotation around Y
-                    0,
-                    'XYZ'
-                  ));
+                // Handle horizontal swipes (for rotating the model)
+                else {
+                  var deltaRotationQuaternion = new THREE.Quaternion()
+                    .setFromEuler(new THREE.Euler(
+                      0, // No rotation around X
+                      toRadians(deltaMove.x * 1), // Angle rotation around Y
+                      0,
+                      'XYZ'
+                    ));
         
-                loadedModelRef.current.quaternion.multiplyQuaternions(deltaRotationQuaternion, loadedModelRef.current.quaternion);
+                  loadedModelRef.current.quaternion.multiplyQuaternions(deltaRotationQuaternion, loadedModelRef.current.quaternion);
+                }
               }
         
               previousMousePosition = {
@@ -106,7 +125,6 @@ useEffect(() => {
             return angle * (Math.PI / 180);
           }
         }
-        
         
             grim()
         return () => {

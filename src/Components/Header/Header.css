@@ -67,4 +67,8 @@
         font-size: 11px;
         max-width: 120px;
     }
+    .Header-Wrapper{
+        padding-right: 19px;
+
+    }
 }
