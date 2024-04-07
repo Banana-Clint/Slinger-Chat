@@ -20,7 +20,7 @@ useEffect(() => {
         const parent=canvas.parentElement;
         const parentWidth = parent.clientWidth;
         const parentHeight = parent.clientHeight;
-        const fov = 87, aspect = parentWidth/ parentHeight*0.75, near = 2, far = 1000;
+        const fov = 87, aspect = parentWidth/ parentHeight*0.90, near = 2, far = 1000;
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
         const configuredCamera = cameraSetup(camera);
         configuredCameraRef.current = configuredCamera;
