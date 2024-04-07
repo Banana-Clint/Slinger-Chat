@@ -2,8 +2,8 @@ import TextTyper from '../TextTyper/TextTyper';
 import React, { useEffect, useState } from 'react';
 import "./Bubble.css";
 const Bubble = () => {
-    const [text, setText] = useState(["all men must server !", "Fear not ! young'un !", "My creator needs work...",
-    "jeez!! somebody died in here?","smells like teen spirit!"]);
+    const [text, setText] = useState(["all men must server !", "Fear not ! young'un !", "My creator needs a Job...",
+    "jeez!! somebody died in here?","smells like teen spirit!","cease fire now !"]);
     const [index, setIndex] = useState(0);
     const [startRendering,sestStartRendering]=useState(false)
 

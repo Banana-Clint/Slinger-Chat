@@ -37,14 +37,20 @@ useEffect(() => {
             loadedModelRef.current = loadedModel; 
             animate(configuredRenderer, loadedModel, configuredCamera, litScene, loadedMixer,newControls);
          
-            
+            grim()
         }
         loadAndAnimateModel();
         window.addEventListener('resize', handleResize(aspect));
         function grim() {
           let isDragging = false;
-          let previousMousePosition = { x: 0, y: 0 };
-          let startTouchPosition = { x: 0, y: 0 };
+          let previousMousePosition = { 
+            x: loadedModelRef.current.position.x, 
+            y: loadedModelRef.current.position.y 
+          };
+          let startTouchPosition = { 
+            x: loadedModelRef.current.position.x, 
+            y: loadedModelRef.current.position.y 
+          };
         
           // Add event listeners for both mouse and touch events
           ['mousedown', 'touchstart'].forEach(event => {
@@ -126,7 +132,7 @@ useEffect(() => {
           }
         }
         
-            grim()
+        
         return () => {
             window.removeEventListener('resize', handleResize(aspect));
         };
