@@ -51,14 +51,14 @@ return(<div className="App">
      <div    
           className="Login-Form_Wrapper">
             
-    {registerClicked?<div className='Login-Registration-Wrapper'><RegistrationForm registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} /></div>:null}
+  
     <div 
           className="Login-Img">
      
      <Model1/>
           </div>
 
-      <div className="Login-Form">
+    {!registerClicked?  <div className="Login-Form">
           <input
           id='Login-UserName'
           type= "text"
@@ -74,7 +74,7 @@ return(<div className="App">
           onClick={loginClick}>Login</button>
           <p>Don't have an account yet? <Router>
           <Link className='Link' onClick={()=>setRegisterClicked(!registerClicked)}>Sign up</Link></Router></p>
-        </div>
+        </div>:  <div className='Login-Registration-Wrapper'><RegistrationForm registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} /></div>}
      </div>
      <div className="Login-Footer">
      <FontAwesomeIcon className="LinkedinIcon" icon={faLinkedin} />
