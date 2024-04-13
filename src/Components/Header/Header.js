@@ -3,7 +3,7 @@ import "./Header.css";
 import AnimatedLogo from '../AnimatedLogo/AnimatedLogo.js';
 import TextTyper from '../TextTyper/TextTyper.js';
 
-export default function Header() {
+export default function Header({registerClicked,setRegisterClicked} ) {
     const [showButton, setShowButton] = useState(false);
     const fullText = 'Welcome to unsecure messaging Service ! create your account here :';
 
@@ -33,7 +33,7 @@ export default function Header() {
                     </li>
                     {showButton && (
                         <li>
-                            <button className='Navbar-Button'>Register</button>
+                            <button className='Navbar-Button' onClick={()=>setRegisterClicked(!registerClicked)}>Register</button>
                         </li>
                     )}
                 </ul>

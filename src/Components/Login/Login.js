@@ -47,7 +47,7 @@ function passwordChange (eventText) {
 return(<div className="App">
   
       <div id="FadeOutEffect"></div>
-     <Header/>
+     <Header  registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
      <div    
           className="Login-Form_Wrapper">
             
