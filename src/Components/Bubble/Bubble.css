@@ -1,19 +1,19 @@
 #Bubble{
     visibility:hidden;
+    display: flex;
     min-width: 300px;
     height: 60px;
-    border: 8px solid #f63630;
+    border: 8px solid white;
     border-radius: 7px;
     padding: 10px 20px;
     position: relative;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    background-color: transparent;
-    line-height: 25px;
+    background-color: black;
     left:150px;
     top:-10px;
     color:white;

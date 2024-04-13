@@ -38,12 +38,12 @@ export default function Registration({registerClicked,setRegisterClicked}) {
     <div className="Registration-Wrapper">
      <FontAwesomeIcon id="Registration-Exit_Button" icon={faXmark} onClick={()=>setRegisterClicked(!registerClicked)} />
         
-     <p style={{color:"white",textTransform:"upperCase",marginTop:"-13px"}}>create your account</p>
+     <p style={{color:"#00c800",textTransform:"upperCase",marginTop:"-13px"}}>create your account :</p>
       <div className="Registration-Form" >
-        <div className="Registreation-Form_Element">  <p>Username:</p>  <input type= "text" onChange={(e)=>userChange(e.target.value)}/></div> 
-        <div className="Registreation-Form_Element">  <p>Password:</p>  <input type= "password" onChange={(e)=>passwordChange(e.target.value)}/></div> 
-        <div className="Registreation-Form_Element">  <p>Email:</p>  <input type= "email" value={emailText} onChange={(e)=>emailChange(e.target.value)}/></div>  
-        <button type="submit" onClick={registerClick} style={{width:'20%'}}>Register</button>
+        <div className="Registration-Form_Element">  <p>Username:</p>  <input type= "text" onChange={(e)=>userChange(e.target.value)}/></div> 
+        <div className="Registration-Form_Element">  <p>Password:</p>  <input type= "password" onChange={(e)=>passwordChange(e.target.value)}/></div> 
+        <div className="Registration-Form_Element">  <p>Email:</p>  <input type= "email" value={emailText} onChange={(e)=>emailChange(e.target.value)}/></div>  
+        <button type="submit" onClick={registerClick} style={{width:'20%',color:"#00c800"}}>Register</button>
         </div>
 
     </div>

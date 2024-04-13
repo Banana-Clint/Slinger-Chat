@@ -13,14 +13,14 @@
 }
 #Registration-Exit_Button{
      margin: 0;
-     padding: 11px;
+     padding: 13px;
      transform: scale(2);
     align-self: flex-end;
    color:white;
    cursor: pointer;
 }
 #Registration-Exit_Button:hover{
-    transform: scale(2.2);
+    transform: scale(2.4);
 }
 .Registration-Form{
     width: 100%;
@@ -31,7 +31,7 @@
     justify-content: space-evenly;    
 
 }
-.Registreation-Form_Element{
+.Registration-Form_Element{
     padding: 7px 20px;
     border: 1px solid white;
     width: 90%;
@@ -42,8 +42,9 @@
     line-height: 13px;
     letter-spacing: 0.1em;
     color: white;
+    text-transform: uppercase;
 }
-.Registreation-Form_Element input{
+.Registration-Form_Element input{
     width: 70%;
     min-height: 30px;
 }
@@ -55,7 +56,8 @@
     min-width: 70%;
     font-family: "Press Start 2P",sans-serif;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
     font-weight: bold;
     color: white;
@@ -64,4 +66,21 @@
   }
   .Registration-Wrapper button:hover{
     transform: scale(1.3);
+  }
+  
+  @media only screen and (max-width:400px){
+ 
+    .Registration-Form{
+        padding: 20px 0;
+        gap: 5px;
+    }
+    .Registration-Form_Element{
+        flex-direction: column;
+        padding: 10px 0;
+        line-height: 0;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+    }
+
   }

@@ -72,8 +72,8 @@ return(<div className="App">
         
           <button  
           onClick={loginClick}>Login</button>
-          <p>Don't have an account yet? <Router>
-          <Link className='Link' onClick={()=>setRegisterClicked(!registerClicked)}>Sign up</Link></Router></p>
+          <span style={{color:"white"}}>Don't have an account yet?<p className='Link' onClick={()=>setRegisterClicked(!registerClicked)}>Sign up</p>
+          </span>
         </div>:  <div className='Login-Registration-Wrapper'><RegistrationForm registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} /></div>}
      </div>
      <div className="Login-Footer">

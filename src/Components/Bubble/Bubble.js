@@ -32,7 +32,7 @@ const Bubble = () => {
 
     return (
         <div id="Bubble">
-            {startRendering && <p><TextTyper
+            {startRendering && <p style={{lineHeight:2}}><TextTyper
                 key={index}
                 TextToType={text[index]}
                 onFinishedTyping={HideSelf}
@@ -43,7 +43,7 @@ const Bubble = () => {
                 height: '0px',
                 borderLeft: '8px solid transparent',
                 borderRight: '8px solid transparent',
-                borderTop: '15px solid #f63630',
+                borderTop: '15px solid white',
                 position: 'absolute',
                 bottom: '-19px',
                 left: '8%',
