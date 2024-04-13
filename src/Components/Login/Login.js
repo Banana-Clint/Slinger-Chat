@@ -1,24 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import ChatRoom from '../Room/Room.js'; 
+
 import "./Login.css"
 import { useState } from 'react';
 import RegistrationForm from '../Registration/Registration.js';
 import axios from 'axios';
 import Header from "../Header/Header.js";
 import Model1 from "../3DModels/Model1.js"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin,faSquareXTwitter,faFacebookF,faSquareInstagram,faUpwork} from '@fortawesome/free-brands-svg-icons';
 
 
 
 
 export default function Login(){
 
-    const [view,setView] = useState(''); 
     const [usernameText, setusernameText] = useState("");
     const [passwordText, setPasswordText] = useState("");
     const [userRole, setUserRole]= useState("")
-
+    const [registerClicked,setRegisterClicked]=useState(0)
 
 function loginClick() {
   axios.post("http://localhost:8080/login", {
@@ -28,7 +28,6 @@ function loginClick() {
   .then((response) => {
     console.log(response); // Log the response 
     setUserRole(response.data.role); // Set the user role
-    setView("ChatRoom"); // Set the view to Chat Room
   })
   .catch(error => console.log(error));
 }
@@ -42,28 +41,24 @@ function passwordChange (eventText) {
   setPasswordText(eventText);
 }
 
-if (view === 'Room') {
-  return <ChatRoom/>;
-}
-if(view === "Registration"){
-  return <RegistrationForm/>
-}
+
 
 
 return(<div className="App">
+  
       <div id="FadeOutEffect"></div>
      <Header/>
      <div    
           className="Login-Form_Wrapper">
-
+            
+    {registerClicked?<div className='Login-Registration-Wrapper'><RegistrationForm registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} /></div>:null}
     <div 
           className="Login-Img">
      
      <Model1/>
           </div>
 
-      <div 
-          className="Login-Form">
+      <div className="Login-Form">
           <input
           id='Login-UserName'
           type= "text"
@@ -78,10 +73,16 @@ return(<div className="App">
           <button  
           onClick={loginClick}>Login</button>
           <p>Don't have an account yet? <Router>
-          <Link className='Link'
-          onClick={()=>setView('Registratione')}>Sign up</Link></Router></p>
+          <Link className='Link' onClick={()=>setRegisterClicked(!registerClicked)}>Sign up</Link></Router></p>
         </div>
      </div>
+     <div className="Login-Footer">
+     <FontAwesomeIcon className="LinkedinIcon" icon={faLinkedin} />
+     <FontAwesomeIcon icon={faUpwork} className="LinkedinIcon" />
+     <FontAwesomeIcon icon={faSquareXTwitter} className="LinkedinIcon" />
+     <FontAwesomeIcon icon={faSquareInstagram}  className="LinkedinIcon" />
+     <FontAwesomeIcon icon={faFacebookF} className="LinkedinIcon"  />
+          </div>
 
 </div>)
 

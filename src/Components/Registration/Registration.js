@@ -1,14 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
+import "./Registration.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark} from '@fortawesome/free-solid-svg-icons';
 
-export default function Registration() {
+export default function Registration({registerClicked,setRegisterClicked}) {
   const [emailText, setEmailText] = useState("");
   const [passwordText, setPasswordText] = useState("");
   const [userText, setUserText] = useState("");
 
   
 
-  function loginClick(){
+  function registerClick(){
     axios.post("http://localHost:8080/Register",{
       username:userText,
       email:emailText,
@@ -32,21 +35,15 @@ export default function Registration() {
   }
 
   return (
-    <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-      <div style = {{ width: "100%" , display: "flex" }} >
-        <div style = {{ width:"15%", justifyContent: 'center', alignItems: 'center' }} >
-          <p>Username:</p>
-          <p>User Password:</p>
-          <p>User Email</p>
+    <div className="Registration-Wrapper">
+     <FontAwesomeIcon id="Registration-Exit_Button" icon={faXmark} onClick={()=>setRegisterClicked(!registerClicked)} />
+      <div className="Registration-Form" >
+        <div className="Registreation-Form_Element">  <p>Username:</p>  <input type= "text" onChange={(e)=>userChange(e.target.value)}/></div> 
+        <div className="Registreation-Form_Element">  <p>User Password:</p>  <input type= "password" onChange={(e)=>passwordChange(e.target.value)}/></div> 
+        <div className="Registreation-Form_Element">  <p>User Email:</p>  <input type= "email" value={emailText} onChange={(e)=>emailChange(e.target.value)}/></div>  
+        <button type="submit" onClick={registerClick} style={{width:'20%'}}>Register</button>
         </div>
-        <div style = {{ width:"50%",display: "flex",flexDirection:"column",gap:"20px",justifyContent:"center" }}>
-           <input type= "text" onChange={(e)=>userChange(e.target.value)}/>
-          <input type= "password" onChange={(e)=>passwordChange(e.target.value)}/>
-          <input type= "email" value={emailText} onChange={(e)=>emailChange(e.target.value)}/>
-   
-        </div>
-      </div>
-      <button type="submit" onClick={loginClick} style={{width:'20%'}}>Register</button>
+
     </div>
   )
 }
