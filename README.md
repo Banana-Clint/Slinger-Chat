@@ -1,6 +1,6 @@
-# Project Title: [Your Project Name]
+# Project Title: [Slinger Chat]
 
-This is a web application code base built with **ReactJs**, **ES6**, **ThreeJs**, **Vanilla CSS** and **HTML**.
+This is a web application code base built with **ReactJs**, **ThreeJs**, **ES6**, **Vanilla CSS** and **HTML**.
 
 ## Live Demo
 
