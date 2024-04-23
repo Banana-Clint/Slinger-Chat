@@ -1,11 +1,11 @@
 Model Information:
-* title:	Hoort
-* source:	https://sketchfab.com/3d-models/hoort-993f87be87674f1494e4d5476d15f022
-* author:	Camelot63RU (https://sketchfab.com/Camelot63RU)
+* title:	Thicc Jirachi
+* source:	https://sketchfab.com/3d-models/thicc-jirachi-93c5694ab91c446cb9f03f3aa3f831f7
+* author:	Chamoy20 (https://sketchfab.com/Chamoy20)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Hoort" (https://sketchfab.com/3d-models/hoort-993f87be87674f1494e4d5476d15f022) by Camelot63RU (https://sketchfab.com/Camelot63RU) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Thicc Jirachi" (https://sketchfab.com/3d-models/thicc-jirachi-93c5694ab91c446cb9f03f3aa3f831f7) by Chamoy20 (https://sketchfab.com/Chamoy20) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
