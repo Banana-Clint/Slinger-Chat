@@ -7,10 +7,12 @@
     display: flex;
     height: 80px;
     align-items: center;
-    padding: 0px 0px 0px 18px;
     background-color: transparent;
     text-transform: uppercase;
-   
+    justify-content: flex-start;
+}
+.Navbar{
+  
 }
 
 .Navbar-List{
@@ -18,7 +20,7 @@
     align-items: center;
     gap: 15px;
     list-style: none;
-    padding-left: 265px;
+    
 }
 .Navbar-List p{
     font-size: 13px;

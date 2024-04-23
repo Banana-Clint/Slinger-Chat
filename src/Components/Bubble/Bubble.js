@@ -14,19 +14,20 @@ const Bubble = () => {
     const DisplaySelf = (Delay) => {
         setTimeout(() => {
             const self = document.getElementById("Bubble");
-            self.style.visibility = "visible";
-            sestStartRendering(true)
+           if(self) {self.style.visibility = "visible";
+            sestStartRendering(true)}
         }, Delay);
     }
 
     const HideSelf = () => {
         setTimeout(() => {
             const self = document.getElementById("Bubble");
-            self.style.visibility = "hidden";
+           if(self){ self.style.visibility = "hidden";
             // Move to the next text after hiding
             setTimeout(() => {  setIndex((prevIndex) => (prevIndex + 1) % text.length);
             // Display the bubble again for the next text
             DisplaySelf(0); }, 3000);
+           }
         }, 3000);
     }
 
@@ -38,17 +39,7 @@ const Bubble = () => {
                 onFinishedTyping={HideSelf}
                 TypeDelay={70}
                 TypeSpeed={120} /></p>}
-            <div style={{
-                width: '0',
-                height: '0px',
-                borderLeft: '8px solid transparent',
-                borderRight: '8px solid transparent',
-                borderTop: '15px solid white',
-                position: 'absolute',
-                bottom: '-19px',
-                left: '8%',
-                transform: 'translateX(-90%)',
-            }} />
+            <div id="Bubble-Bottom" />
         </div>
     );
     

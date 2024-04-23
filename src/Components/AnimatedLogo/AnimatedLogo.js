@@ -6,7 +6,7 @@ export default function AnimatedLogo(){
     useEffect(() => {
         const timer = setTimeout(() => {
           document.getElementsByClassName('Logo-Img')[0].classList.add('zoom-out');
-        }, 1000); // Adjust as needed
+        }, 5800); // Adjust as needed
     
         return () => clearTimeout(timer);
     }, []);

@@ -4,7 +4,6 @@
   min-height: 100vh;
   background-image: url('../Images/sky.jpg');
   background-position: cover;
-  opacity: 0.9;
 }
 .Login-Form_Wrapper{
   display: flex;
@@ -15,7 +14,7 @@
   
 }
 .Login-Img{
-  max-width: 27%;
+  max-width: 23%;
 }
 .Login-Form {
   display: flex;
@@ -24,10 +23,10 @@
   flex-direction: column;
   border-top-right-radius: 1%;
   text-align: center;
-  min-width: 600px;
+  min-width: 55%;
   height: 300px;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   z-index: 2000;
   border: 8px solid white;
 }
@@ -36,22 +35,33 @@
   width: 350px;
   min-height: 30px;
   font-family: "Press Start 2P",sans-serif;
-  text-transform: uppercase;
   text-align: center;
   border: none;
   background-color: white;
+  color:#00c800;
 
+}
+.Login-Form #Login-UserName::placeholder{
+  
+  text-transform: uppercase;
+  color: #00c800;
 }
 .Login-Form #Login-PassWord{
   width: 350px;
   min-height: 30px;
   font-family: "Press Start 2P",sans-serif;
-  text-transform: uppercase;
   text-align: center;
   border: none;
   background-color: white;
+  color:#00c800 ;
 
 }
+.Login-Form #Login-PassWord::placeholder{
+  color:green;
+  
+  text-transform: uppercase;
+}
+
 .Login-Form button{
   background-color: transparent;
   padding:10px;  
@@ -104,15 +114,14 @@
 
 
 .Login-Registration-Wrapper {
-  width: 45%;
-  min-height: 50vh;
+  width: 55%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   z-index: 2001;
   background-image: url('../Images/sky.jpg');
   background-position: cover;
   margin: 0;
+  border: 8px solid white;
 }
 
 
@@ -173,6 +182,10 @@
     min-height: 117px;
     align-items: flex-end;
     padding-bottom: 17px;
+  }
+  .Login-Registration-Wrapper {
+    max-width: 97%;
+ 
   }
   
 

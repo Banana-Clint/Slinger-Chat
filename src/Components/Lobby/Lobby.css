@@ -1,0 +1,25 @@
+
+.Lobby-Wrapper{
+    width: 100%;
+    border: 2px solid green;
+    min-height: 100%;
+    font-family: "Press Start 2P",sans-serif;
+    color:white;
+    display: flex;
+    justify-content: center;
+    
+}
+.Elements-Wrapper {
+    width: 100%;
+    display: flex;
+    background-color: black;
+}
+.Elements-Wrapper li{
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+}
+.Display-Wrapper{
+    background-color: black;
+    
+}

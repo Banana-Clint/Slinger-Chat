@@ -9,7 +9,7 @@ canvas {
 
 .Canvas-Wrapper {
   width: 100%;
-  height: 427px;
+  max-height: 420px;
 }
 
 

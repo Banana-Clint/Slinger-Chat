@@ -25,6 +25,9 @@
     animation: moveLogo 6s forwards;
     transition: transform 5s ease-in-out;
 }
+.zoom-out{
+    position: relative;
+}
 
 @keyframes moveLogo {
     0%{     

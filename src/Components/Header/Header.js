@@ -5,7 +5,7 @@ import TextTyper from '../TextTyper/TextTyper.js';
 
 export default function Header({registerClicked,setRegisterClicked} ) {
     const [showButton, setShowButton] = useState(false);
-    const fullText = 'Welcome to unsecure messaging Service ! create your account here :';
+    const fullText = 'Welcome to an unfiltered online chatting Service ! create your account here :';
 
     const HideParagraph=(Delay)=>{
         setTimeout(()=>{
@@ -22,13 +22,13 @@ export default function Header({registerClicked,setRegisterClicked} ) {
     return (
         <div className="Header-Wrapper">
             <AnimatedLogo/>
-            <div className="Navbar">
+            <div className="Navbar" >
                 <ul className="Navbar-List">
                     <li>
                         <p id='Navbar-List_p'><TextTyper 
                         TextToType={fullText} 
                         onFinishedTyping={()=>{setShowButton(true); HideParagraph(3000)}}
-                        TypeDelay={3000}
+                        TypeDelay={5800}
                         TypeSpeed={50}/></p>
                     </li>
                     {showButton && (

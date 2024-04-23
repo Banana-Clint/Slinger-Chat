@@ -13,7 +13,7 @@ import { faLinkedin,faSquareXTwitter,faFacebookF,faSquareInstagram,faUpwork} fro
 
 
 
-export default function Login(){
+export default function Login({setView}){
 
     const [usernameText, setusernameText] = useState("");
     const [passwordText, setPasswordText] = useState("");
@@ -21,15 +21,16 @@ export default function Login(){
     const [registerClicked,setRegisterClicked]=useState(0)
 
 function loginClick() {
-  axios.post("http://localhost:8080/login", {
-    username: usernameText,
-    password: passwordText
-  })
-  .then((response) => {
-    console.log(response); // Log the response 
-    setUserRole(response.data.role); // Set the user role
-  })
-  .catch(error => console.log(error));
+  setView("Room")
+  // axios.post("http://localhost:8080/login", {
+  //   username: usernameText,
+  //   password: passwordText
+  // })
+  // .then((response) => {
+  //   console.log(response); // Log the response 
+  //   setUserRole(response.data.role); // Set the user role
+  // })
+  // .catch(error => console.log(error));
 }
 
 

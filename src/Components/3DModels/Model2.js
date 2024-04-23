@@ -2,8 +2,7 @@ import React, { useEffect,useRef,useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import './Model1.css';
-import Bubble from "../Bubble/Bubble.js";
+import './Model2.css';
 
 const ThreeComponent = () => {
 
@@ -11,7 +10,7 @@ const ThreeComponent = () => {
       const [clock] = useState(new THREE.Clock());
       const configuredRendererRef = useRef();
       const configuredCameraRef = useRef();
-      const loadedModelRef=useRef("model1");
+      const loadedModelRef=useRef();
 
 useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,7 +19,7 @@ useEffect(() => {
         const parent=canvas.parentElement;
         const parentWidth = parent.clientWidth;
         const parentHeight = parent.clientHeight;
-        const fov = 87, aspect = parentWidth/ parentHeight*0.90, near = 2, far = 1000;
+        const fov = 87, aspect = parentWidth/ parentHeight*0.6, near = 2, far = 1000;
         const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
         const configuredCamera = cameraSetup(camera);
         configuredCameraRef.current = configuredCamera;
@@ -170,14 +169,12 @@ function handleResize(aspect) {
     controls.update();
 
     // Rotate the model around its Y-axis
-    if (model) {
-        model.rotation.y += 0.004; // Adjust this value to get the desired speed
-    }
+ 
 
     // Update the mixer on each frame
     if (mixer) {
         // Make the animation 1 second slower
-        mixer.timeScale = 1.2; // Adjust this value to get the desired speed
+        mixer.timeScale = 0.7; // Adjust this value to get the desired speed
         mixer.update(clock.getDelta());
     }
 
@@ -195,7 +192,7 @@ function handleResize(aspect) {
   
           // Load your 3D model
           loader.load(
-              process.env.PUBLIC_URL + '/Model2/source/model.gltf',
+              process.env.PUBLIC_URL + '/Model1/scene.gltf',
               (gltf) => {
                   // Add the loaded scene to your Three.js scene
                   const loadedModel = gltf.scene;
@@ -203,14 +200,17 @@ function handleResize(aspect) {
   
                   let loadedMixer;
                   if (gltf.animations && gltf.animations.length > 0) {
+                      console.log('animation exists')
                       loadedMixer = new THREE.AnimationMixer(loadedModel);
-                      let action = loadedMixer.clipAction(gltf.animations[1]);
+                      console.log('mixer loaded')
+                      let action = loadedMixer.clipAction(gltf.animations[0]);
                       action.play();
                   }
            
-                  loadedModel.position.y -= 2.9;
+                  loadedModel.position.y -= 8.9;
                   loadedModel.position.x =-0.1;
                   loadedModel.rotation.y += .3;
+                  loadedModel.scale.y *=2.8
                   controls.update();
                   console.log("model loaded")
                   resolve({loadedModel, loadedMixer});
@@ -226,7 +226,7 @@ function handleResize(aspect) {
   };
   
       const cameraSetup = (camera) => {
-        camera.position.z += 4 *-1; // Set the camera position
+        camera.position.z += 12; // Set the camera position
         console.log("camera up")
         return camera
         
@@ -242,11 +242,11 @@ function handleResize(aspect) {
       
         // Add a directional light
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
-        directionalLight.position.set(0.1, 0.1, 0.5);
+        directionalLight.position.set(2, 2, 5);
         scene.add(directionalLight);
       
         // Add a hemisphere light
-        const hemisphereLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 10);
+        const hemisphereLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 6.7);
         scene.add(hemisphereLight);
         console.log("lit up")
         return scene
@@ -254,8 +254,7 @@ function handleResize(aspect) {
       
 
     return( <div className='Canvas-Wrapper'>
-          <Bubble/>
-        <canvas ref={canvasRef} ></canvas>
+        <canvas id="canvas" ref={canvasRef} ></canvas>
          </div>)
         }
 export default ThreeComponent;

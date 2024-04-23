@@ -19,6 +19,19 @@
     color:white;
     z-index:2100;
 }
+#Bubble-Bottom{
+
+        width: 0;
+        height: 0px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 15px solid white;
+        position: absolute;
+        bottom: -19px;
+        left: 8%;
+        transform: translateX(-90%);
+    }
+
 @media only screen and (max-width:900px){
     #Bubble{
         transform:scale(0.95);
