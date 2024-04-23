@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ChatRoomApi/static/css/main.3d7b8dd2.css",
-    "main.js": "/ChatRoomApi/static/js/main.d0f02722.js",
-    "static/media/prettypixels.png": "/ChatRoomApi/static/media/prettypixels.9e1e60dd31cd6650a655.png",
-    "static/media/logo.png": "/ChatRoomApi/static/media/logo.eaf61da4591045dc34d6.png",
-    "static/media/Cowboy Hat.png": "/ChatRoomApi/static/media/Cowboy Hat.59705273bcd6022f42a3.png",
-    "static/media/sky.jpg": "/ChatRoomApi/static/media/sky.ff13b7f0761b56f21524.jpg",
-    "index.html": "/ChatRoomApi/index.html",
-    "main.3d7b8dd2.css.map": "/ChatRoomApi/static/css/main.3d7b8dd2.css.map",
-    "main.d0f02722.js.map": "/ChatRoomApi/static/js/main.d0f02722.js.map"
+    "main.css": "/Chatroom/static/css/main.46fbabdc.css",
+    "main.js": "/Chatroom/static/js/main.7f7dd933.js",
+    "static/media/prettypixels.png": "/Chatroom/static/media/prettypixels.9e1e60dd31cd6650a655.png",
+    "static/media/logo.png": "/Chatroom/static/media/logo.eaf61da4591045dc34d6.png",
+    "static/media/Cowboy Hat.png": "/Chatroom/static/media/Cowboy Hat.59705273bcd6022f42a3.png",
+    "static/media/sky.jpg": "/Chatroom/static/media/sky.ff13b7f0761b56f21524.jpg",
+    "index.html": "/Chatroom/index.html",
+    "main.46fbabdc.css.map": "/Chatroom/static/css/main.46fbabdc.css.map",
+    "main.7f7dd933.js.map": "/Chatroom/static/js/main.7f7dd933.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d7b8dd2.css",
-    "static/js/main.d0f02722.js"
+    "static/css/main.46fbabdc.css",
+    "static/js/main.7f7dd933.js"
   ]
 }
