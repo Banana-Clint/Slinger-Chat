@@ -10,6 +10,7 @@
     background-image: url('../Images/sky.jpg');
     background-position: cover;
 }
+
 .Dashboard-Wrapper{
     display: flex;
     justify-content: flex-end;
@@ -19,10 +20,23 @@
         border: none;
         max-width: 17%;
     }
+  .Dashboard-Wrapper .Neon{
+    border: 10px solid #00ff00; 
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  } 
+  @keyframes neon-pulse {
+    from {
+      border-color: #00ff00;
+      box-shadow: 0 0 15px #00ff00;
+    }
+    to {
+      border-color: #33ff33;
+      box-shadow: 0 0 25px #33ff33;
+    }
+  }
 .Dashboard{
     display: flex;
-    width: 77%;
-    border: 10px  solid white ;
+    width: 100%;
     justify-content: center;
 }
 
@@ -32,11 +46,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 10px solid white;
     gap: 5px;
+    border-right: 10px solid #00ff00; 
     padding-top:5px;
     height: 100%;
     justify-content: space-evenly;
+    animation: neon-pulse 2s ease-in-out infinite alternate;
 }
 .Dashboard-Tools button{
     background-color: transparent;

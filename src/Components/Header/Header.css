@@ -42,7 +42,8 @@
     letter-spacing: 0.01rem;
     text-transform: uppercase;
     font-weight: bold;
-    border: 4px solid #00c800;
+    border: 4px solid #00ff00; 
+    animation: neon-pulse 2s ease-in-out infinite alternate;
 
    
 }

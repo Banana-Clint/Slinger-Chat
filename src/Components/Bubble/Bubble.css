@@ -3,7 +3,8 @@
     display: flex;
     min-width: 300px;
     height: 60px;
-    border: 8px solid white;
+  border: 10px solid #00ff00; 
+  animation: neon-pulse 2s ease-in-out infinite alternate;
     border-radius: 7px;
     padding: 10px 20px;
     position: relative;
@@ -25,11 +26,12 @@
         height: 0px;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
-        border-top: 15px solid white;
+        border-top: 15px solid #00ff00;
         position: absolute;
         bottom: -19px;
         left: 8%;
         transform: translateX(-90%);
+        
     }
 
 @media only screen and (max-width:900px){

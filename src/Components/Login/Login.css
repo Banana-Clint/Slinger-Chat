@@ -16,6 +16,17 @@
 .Login-Img{
   max-width: 23%;
 }
+
+@keyframes neon-pulse {
+  from {
+    border-color: #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+  }
+  to {
+    border-color: #33ff33;
+    box-shadow: 0 0 25px #33ff33;
+  }
+}
 .Login-Form {
   display: flex;
   align-items: center;
@@ -25,10 +36,11 @@
   text-align: center;
   min-width: 55%;
   height: 300px;
+  border: 10px solid #00ff00; 
+  animation: neon-pulse 2s ease-in-out infinite alternate;
   align-items: center;
   gap: 20px;
   z-index: 2000;
-  border: 8px solid white;
 }
 
 .Login-Form #Login-UserName{
@@ -121,7 +133,8 @@
   background-image: url('../Images/sky.jpg');
   background-position: cover;
   margin: 0;
-  border: 8px solid white;
+  border: 10px solid #00ff00; 
+  animation: neon-pulse 2s ease-in-out infinite alternate;
 }
 
 

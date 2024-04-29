@@ -1,13 +1,13 @@
 
 
 .Registration-Wrapper{
-    width: 100%;
+    width: 97%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin: 0;
-    padding-bottom: 9px;
+    padding: 20px 0px;
     font-size: clamp(13px, 2vw, 17px);
   
 }
@@ -23,9 +23,8 @@
  } 
 
 #Registration-Exit_Button{
-    
-    color:#00c800!important;
-     margin: 0;
+    margin-top: -20px;
+    color:white!important;
      padding:5px 8px;
      transform: scale(2);
    color:white;
