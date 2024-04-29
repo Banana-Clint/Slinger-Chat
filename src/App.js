@@ -4,7 +4,7 @@ import Room from './Components/Room/Room.js'
 import { useState } from 'react'
 function App() {
  
-  const [view,setView]=useState("")
+  const [view,setView]=useState("Room")
 
 if (view==="Room"){
   return (<Room/>)

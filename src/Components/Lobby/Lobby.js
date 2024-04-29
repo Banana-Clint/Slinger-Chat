@@ -9,20 +9,20 @@ export default function Lobby ({type}){
 
 const[elements,setElements]=useState(["Room1","Room2","Roomd","Rooms","Roomv","Roomq"])
 
-if (type=="Public-Messages"){
+if (type==="Public-Messages"){
     return(
         
         <>  
-            <h1>Under construction</h1>
+             
          <div className="Elements-Wrapper"> 
-        <ul >
-        {elements?elements.map((element)=>{return<li  key={element}> {element} </li>}
+         <h3 style={{letterSpacing:"-2px",wordSpacing:"-9px"}}>Get a room</h3>  
+        {elements?elements.map((element)=>{return<p key={element}> <span className="availability-badge"></span>{element} </p>}
          ):null}
-         </ul>
         </div>
         <div className="Display-Wrapper">
          <Chat/>
-        </div></>    
+        </div>
+        </>    
 
 )}
     else{

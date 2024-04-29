@@ -2,24 +2,48 @@
 .Lobby-Wrapper{
     width: 100%;
     border: 2px solid green;
-    min-height: 100%;
     font-family: "Press Start 2P",sans-serif;
     color:white;
     display: flex;
-    justify-content: center;
     
 }
 .Elements-Wrapper {
-    width: 100%;
     display: flex;
     background-color: black;
-}
-.Elements-Wrapper li{
+    flex-direction: column;
+    border: 2px solid red;
+    width: 17%;
+    font-size: 14px;
+    justify-content: flex-start;
+  }
+
+  .Elements-Wrapper p {
     font-size: 14px;
     line-height: 1.5;
-    list-style: none;
-}
+    display: flex;
+    align-items: center;
+    gap: 3px; /* Set gap to 0 to eliminate spacing */
+    margin: 2px; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+  }
+  .Elements-Wrapper p:hover {
+    cursor: pointer;
+    color: #00c800;
+    .availability-badge{
+        background-color: white;
+    }
+ 
+  }
+.availability-badge {
+    background-color: #00c800;;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+  }
+
 .Display-Wrapper{
     background-color: black;
+    width:84%;
     
 }
