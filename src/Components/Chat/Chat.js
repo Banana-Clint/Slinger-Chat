@@ -17,7 +17,9 @@ export default function Chat({chat,setChat}){
             ...chat,
             messages: [...chat.messages, { message: textMessage, sender: "Founder", timestamp: "11:00" }]
           });
+          setTextMessage("")
         }
+
       };
       
 
@@ -27,7 +29,7 @@ return(
         {chat?chat.messages.map((message,i)=>{
             return(<li  key={i}>{"("+message.timestamp+")"}<p><b>{message.sender+": "}</b>{message.message} </p></li>)
         }):null}</ul>
-        <input type='textArea' onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>
+        <input type='textArea' value={textMessage} onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>
             
     </div>
 )

@@ -1,16 +1,18 @@
 
-.App {
+body{
   margin: 0;
   min-height: 100vh;
   background-image: url('../Images/sky.jpg');
   background-position: cover;
+
 }
 .Login-Form_Wrapper{
   display: flex;
   font-family: "Press Start 2P",sans-serif;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
   margin: 0;
+  height: 64vh;
   
 }
 .Login-Img{
@@ -35,7 +37,7 @@
   border-top-right-radius: 1%;
   text-align: center;
   min-width: 55%;
-  height: 300px;
+  height: 55vh;
   border: 10px solid #00ff00; 
   animation: neon-pulse 2s ease-in-out infinite alternate;
   align-items: center;
@@ -99,15 +101,16 @@
 .Link{
   color: #00c800 !important;
   cursor: pointer;
+  width: 97%;
   
 }
 .Link:hover{
-  transform: scale(1.4)!important;
+  transform: scale(1.2)!important;
 }
 .Login-Footer{
-  min-height: 100px;
+  height: 20vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin: 0;
   gap: 10px;
@@ -149,13 +152,22 @@
     
   }
 
+  .App{
+    display: flex;
+    flex-direction: column;
+  }
   .Login-Form_Wrapper{
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    min-height: 122vh;
   }
-    
+  .Login-Form{
+    width: 93%;
+  }
+
+ 
 .Login-Registration-Wrapper {
   width:93%;
 }

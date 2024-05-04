@@ -9,8 +9,10 @@
     margin: 0;
     padding-bottom: 20px ;
     font-size: clamp(13px, 2vw, 17px);
+    height: 52vh;
   
 }
+
 
  .Registration-Wrapper-Head{
     align-self: flex-end;
@@ -33,6 +35,14 @@
 }
 #Registration-Exit_Button:hover{
     transform: scale(2.2);
+}
+.Registration-Form-Wrapper{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 .Registration-Form{
     width: 100%;
