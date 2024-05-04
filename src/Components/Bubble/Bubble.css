@@ -3,7 +3,7 @@
     display: flex;
     min-width: 300px;
     height: 60px;
-  border: 10px solid #00ff00; 
+  border: 5px solid #00ff00; 
   animation: neon-pulse 2s ease-in-out infinite alternate;
     border-radius: 7px;
     padding: 10px 20px;
@@ -24,11 +24,11 @@
 
         width: 0;
         height: 0px;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 15px solid #00ff00;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 7px solid #00ff00;
         position: absolute;
-        bottom: -19px;
+        bottom: -12px;
         left: 8%;
         transform: translateX(-90%);
         

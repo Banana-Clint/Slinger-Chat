@@ -3,10 +3,10 @@
 
 .User-Wrapper{
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 50%;
     justify-content:flex-start;
     justify-self: flex-start;
     
@@ -15,14 +15,12 @@
 .User-Image-Wrapper{
     display: flex;
     justify-content: center;
-    width: 100%;
     margin: 0;
 }
 .User-Image-Wrapper img{
+    display: flex;
     margin-top: -14px;
-    width: 50%;
-    
-    
+
 }
 .User-Head{
     display: flex;
@@ -30,22 +28,21 @@
     font-family: "Press Start 2P",sans-serif;    
     color: #00c800;
     text-transform: uppercase;
-    height: 27%;
+    margin: 0;
+    padding: 0;
 }
 .User-Head span{
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size:  clamp(9px, 3.5vw, 13px);
-    color:white;
+    justify-content: flex-start;
+    font-size:  clamp(9px, 3.5vw, 15px);
+    color:gold;
+    margin: 0;
+    padding: 0;
     letter-spacing: 0.1px;
-    width: 100%;
     
 }
 #CowboyHat{
-    width: 37%;
-    margin-right: -3px;
-    margin-top: -11px;
-    margin-left:-10px;
+    width: 27%;
 
 }

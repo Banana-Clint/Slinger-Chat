@@ -1,20 +1,33 @@
-import { useState } from "react"
+import './Chat.css'
+import { useState } from 'react'
 
 
 
 
+export default function Chat({chat,setChat}){
 
-export default function Chat(){
+    const[textMessage,setTextMessage]=useState(null)
+    const messageChange=(e)=>{
+        setTextMessage(e.target.value)
 
-const[messages,setMeasages]=useState(["msdg1","msihg2","hello","Mahah"])
-
+    }
+    const addMessage = (e) => {
+        if (e.key === "Enter") {
+          setChat({
+            ...chat,
+            messages: [...chat.messages, { message: textMessage, sender: "Founder", timestamp: "11:00" }]
+          });
+        }
+      };
+      
 
 return(
     <div className="Chat-Wrapper">
         <ul>
-        {messages?messages.map((message,i)=>{
-            return(<li style={{color:"white"}} key={i}>{message+"k"+i}</li>)
+        {chat?chat.messages.map((message,i)=>{
+            return(<li  key={i}>{"("+message.timestamp+")"}<p><b>{message.sender+": "}</b>{message.message} </p></li>)
         }):null}</ul>
+        <input type='textArea' onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>
             
     </div>
 )

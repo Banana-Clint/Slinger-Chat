@@ -1,6 +1,5 @@
 
 import"./Room.css"
-import Model from '../3DModels/Model2.js'
 import User from "../User/User.js"
 import { useState } from "react"
 import Mail from '../Images/Mail Box.png' 
@@ -17,7 +16,6 @@ export default function Room(){
     return(
     <div className="Room-Wrapper">
         <div className="Dashboard-Wrapper">
-        <div className="Neon">
         <div className="Dashboard">
         <div className="Dashboard-Tools">
         <User username={user} />
@@ -50,9 +48,8 @@ export default function Room(){
             <Lobby type={lobbyType}/>
             </div>
             </div> 
-        </div>
-            <div className="Dashboard-Model"><Model/>
-            </div>
+      
+    
         </div>
 
     </div>

@@ -1,10 +1,9 @@
 
 .Room-Wrapper{
-
-    background-color: black;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 0;
     min-height: 100vh;
     background-image: url('../Images/sky.jpg');
@@ -12,18 +11,15 @@
 }
 
 .Dashboard-Wrapper{
+    width: 90%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
 
     }
  .Dashboard-Model{
         border: none;
         max-width: 17%;
     }
-  .Dashboard-Wrapper .Neon{
-    border: 10px solid #00ff00; 
-    animation: neon-pulse 2s ease-in-out infinite alternate;
-  } 
   @keyframes neon-pulse {
     from {
       border-color: #00ff00;
@@ -38,19 +34,22 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    border: 10px solid #00ff00; 
+    animation: neon-pulse 2s ease-in-out infinite alternate;
 }
 
 
 .Dashboard-Tools{
     width: 40%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     border-right: 10px solid #00ff00; 
-    padding-top:5px;
+    padding: 0;
     height: 100%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     animation: neon-pulse 2s ease-in-out infinite alternate;
 }
 .Dashboard-Tools button{
@@ -146,4 +145,16 @@
 .NavButtons-Wrapper button img{
     height: 100%;
     width: 100%;
+}
+@media only screen and (max-width:700px){
+    .Dashboard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .Dashboard-Tools{
+        border: none;
+        animation: none;
+    }
 }

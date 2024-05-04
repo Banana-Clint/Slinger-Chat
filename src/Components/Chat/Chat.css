@@ -1,0 +1,48 @@
+.Chat-Wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 90%;;
+    width: 95.5%;
+    padding: 10px;
+
+}
+.Chat-Wrapper ul{
+    padding: 0;
+    width: 80%;
+}
+.Chat-Wrapper li{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    font-size: 12px;
+    list-style: none;
+}
+.Chat-Wrapper li p{text-align: left;
+    padding: 5px;
+    background-color: white;
+    border:5px solid #00c800;
+    border-radius: 10px;
+    color: black;
+    line-height: 2;
+    font-size: 15px;
+    letter-spacing: -0.7px;
+    word-spacing: -2px;
+}
+.Chat-Wrapper li p b{
+    color: #00c800;
+}
+.Chat-Wrapper input{
+    width: 100%;
+    height: 20%;
+    border:5px solid #00c800;
+    min-height:80px;
+    align-items: flex-start;
+    font-family: "Press Start 2P",sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    text-align: center;
+
+}
