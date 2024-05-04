@@ -8,10 +8,16 @@
     padding: 10px;
 
 }
-.Chat-Wrapper ul{
+.Chat-Wrapper ul {
     padding: 0;
-    width: 80%;
-}
+    width: 90%;
+    max-height: 40vh; /* Maximum height of the ul */
+    overflow-y: auto; /* Enable vertical scrolling when necessary */
+    scrollbar-width: 30px; /* Adjust the scrollbar width */
+    scrollbar-color: #00c800;
+    
+  }
+  
 .Chat-Wrapper li{
     display: flex;
     padding: 0;
