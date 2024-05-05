@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Slinger-Chat/static/css/main.3ab24121.css",
-    "main.js": "/Slinger-Chat/static/js/main.7a151fbe.js",
+    "main.css": "/Slinger-Chat/static/css/main.a937ab2d.css",
+    "main.js": "/Slinger-Chat/static/js/main.176dc552.js",
     "static/media/logo.png": "/Slinger-Chat/static/media/logo.eaf61da4591045dc34d6.png",
     "static/media/Cowboy Hat.png": "/Slinger-Chat/static/media/Cowboy Hat.59705273bcd6022f42a3.png",
     "static/media/prettypixels.png": "/Slinger-Chat/static/media/prettypixels.1f0ae20678e15b2f4ab7.png",
     "static/media/sky.jpg": "/Slinger-Chat/static/media/sky.ff13b7f0761b56f21524.jpg",
     "index.html": "/Slinger-Chat/index.html",
-    "main.3ab24121.css.map": "/Slinger-Chat/static/css/main.3ab24121.css.map",
-    "main.7a151fbe.js.map": "/Slinger-Chat/static/js/main.7a151fbe.js.map"
+    "main.a937ab2d.css.map": "/Slinger-Chat/static/css/main.a937ab2d.css.map",
+    "main.176dc552.js.map": "/Slinger-Chat/static/js/main.176dc552.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ab24121.css",
-    "static/js/main.7a151fbe.js"
+    "static/css/main.a937ab2d.css",
+    "static/js/main.176dc552.js"
   ]
 }
