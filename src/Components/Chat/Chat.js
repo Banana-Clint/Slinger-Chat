@@ -43,7 +43,7 @@ return(
         {chat?chat.messages.map((message,i)=>{
             return(<li  key={i}>{"("+message.timestamp+")"}<p><b>{message.sender+": "}</b>{message.message} </p></li>)
         }):null}
-        {isTyping?<p>Paul is typing</p>:null}</ul>
+        {isTyping?<p>Paul is typing...</p>:null}</ul>
         <input type='textArea' value={textMessage} onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>
             
     </div>

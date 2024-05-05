@@ -17,7 +17,7 @@
     scrollbar-color: #00c800;
     
   }
-  
+  .Chat-Wrapper ul p{ font-size: 10px; word-spacing: -6px;}
 .Chat-Wrapper li{
     display: flex;
     padding: 0;
