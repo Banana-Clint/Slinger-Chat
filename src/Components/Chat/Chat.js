@@ -4,14 +4,14 @@ import { useState } from 'react'
 
 
 
-export default function Chat({chat,setChat}){
+export default function Chat({chat,setChat,publicRooms,setPublicRooms}){
   const[isTyping,setIsTyping]=useState(false)
 
-    const[textMessage,setTextMessage]=useState(null)
+    const[textMessage,setTextMessage]=useState('')
     const messageChange=(e)=>{
       if(isTyping===true){
         setTextMessage(e.target.value)
-        setTimeout (()=>setIsTyping(false),6000)
+        setTimeout (()=>setIsTyping(false),4000)
       }else{
       setIsTyping(true);
       setTextMessage(e.target.value)
@@ -28,6 +28,10 @@ export default function Chat({chat,setChat}){
           });
           setTextMessage("")
         }
+        // setPublicRooms({
+        //   ...publicRooms,
+          
+        // })
 
       };
       

@@ -10,8 +10,9 @@ export default function Header({registerClicked,setRegisterClicked} ) {
     const HideParagraph=(Delay)=>{
         setTimeout(()=>{
         let p=document.getElementById('Navbar-List_p')
+        if(p){
         return p.style.visibility="hidden"
-        },Delay)
+    }},Delay)
     }
 
  

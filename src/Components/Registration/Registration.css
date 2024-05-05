@@ -89,10 +89,13 @@
   }
   
   @media only screen and (max-width:400px){
- 
+    .Registration-Wrapper{
+        padding: 20px 0;
+    }
     .Registration-Form{
         padding: 20px 0;
         gap: 5px;
+        align-items: center;
     }
     .Registration-Form_Element{
         flex-direction: column;

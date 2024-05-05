@@ -156,5 +156,6 @@
     .Dashboard-Tools{
         border: none;
         animation: none;
+        width: 100%;
     }
 }
