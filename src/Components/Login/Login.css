@@ -6,6 +6,12 @@ body{
   background-position: cover;
 
 }
+.App{
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('../Images/sky.jpg');
+  background-position: cover;
+}
 .Login-Form_Wrapper{
   display: flex;
   font-family: "Press Start 2P",sans-serif;
