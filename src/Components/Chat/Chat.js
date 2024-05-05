@@ -13,9 +13,10 @@ export default function Chat({chat,setChat,publicRooms,setPublicRooms}){
         setTextMessage(e.target.value)
         setTimeout (()=>setIsTyping(false),4000)
       }else{
-      setIsTyping(true);
+      setTimeout (()=>
+        setIsTyping(true),500)
       setTextMessage(e.target.value)
-      setTimeout (()=>setIsTyping(false),6000)
+      setTimeout (()=>setIsTyping(false),4000)
       }
       
 
