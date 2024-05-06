@@ -14,11 +14,24 @@
     padding: 0;
     margin: 0;
     max-width: 60vw;
-    overflow-y: auto; /* Enable vertical scrolling when necessary */
-    scrollbar-width: 30px; /* Adjust the scrollbar width */
-    scrollbar-color: #00c800;
-    
-  }
+    overflow-y: auto; 
+    scrollbar-width: 30px; 
+    scrollbar-color: #00c800 transparent;
+}
+
+.Chat-Wrapper ul::-webkit-scrollbar {
+    width: 30px;
+}
+
+.Chat-Wrapper ul::-webkit-scrollbar-thumb {
+    background-color: #00c800;
+    border-radius: 15px;
+}
+
+.Chat-Wrapper ul::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
   .Chat-Wrapper ul p{ 
     min-height: 10px;font-size: 10px; word-spacing: -6px;}
   .Chat-Wrapper li {
