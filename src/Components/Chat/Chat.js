@@ -48,7 +48,7 @@ export default function Chat({chat,setChat,publicRooms,setPublicRooms}){
             {chat?chat.messages.map((message,i)=>{
                 return(<li  key={i}>{"("+message.timestamp+")"}<p><b>{message.sender+": "}</b>{message.message} </p></li>)
             }):null}
-            {isTyping?<p>Paul is typing...</p>:null}
+            {isTyping?<p>Paul is typing...</p>:<p> </p>}
             <div ref={messagesEndRef} />
             </ul>
             <input type='textArea' value={textMessage} onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>

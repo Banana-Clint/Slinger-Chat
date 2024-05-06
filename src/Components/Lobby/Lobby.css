@@ -5,13 +5,11 @@
     font-family: "Press Start 2P",sans-serif;
     color:white;
     display: flex;
-    min-height: 40vh;
     
 }
 .Elements-Wrapper {
     display: flex;
     flex-direction: column;
-    width: 30%;
     font-size: 14px;
     justify-content: flex-start;
     gap: 30px;
@@ -21,7 +19,7 @@
   padding-left: 10px;
   }
   .Elements{
-    padding-left: 7px;
+    padding-left: 27px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -60,6 +58,11 @@
     margin: 0;
     padding: 0; 
     font-size: clamp(13px, 2vw, 17px);
+    background-color: black;
+}
+.Display-Wrapper h3{
+  line-height: 1;
+  color: #00c800;
 }
 
 @media only screen and (max-width:950px){
