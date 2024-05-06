@@ -92,6 +92,7 @@
       align-items: center;
       text-align: center;
       width: 100%;
+      padding-left: 0;
     }
     .Elements h5{
       width: 100%;
@@ -107,5 +108,9 @@
       margin-bottom: 0;
       width: 100%;
       text-align: center;
+    }
+    .Display-Wrapper{
+      padding: 20px 0;
+      
     }
 }

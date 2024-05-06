@@ -46,7 +46,7 @@
 
 .Chat-Wrapper li p{
     
-    max-width: 31vw; 
+    max-width: 28vw; 
     word-wrap: break-word;
     text-align: left;
     padding: 5px;
@@ -65,7 +65,7 @@
     color: #00c800;
 }
 .Chat-Wrapper input{
-    width: 38vw;
+    width: 37vw;
     height: 20%;
     border:5px solid #00c800;
     min-height:80px;
@@ -76,14 +76,17 @@
     text-align: center;
 
 }
-@media only screen and (max-width:700px){
+@media only screen and (max-width:950px){
     .Chat-Wrapper ul {
-        max-width: 70vw;
+        max-width: 85vw;
+        margin-bottom: 30px;
     }
     .Chat-Wrapper{
-        padding: 0;
+        padding-top: 0;
     }
     .Chat-Wrapper input{
         width: 70vw;
     }
+    
+    .Chat-Wrapper li p{ max-width: 57%;}
 }

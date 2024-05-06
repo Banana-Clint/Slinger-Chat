@@ -35,15 +35,17 @@ return (
               : null}
             </div>
             </div>
-            <div className="Display-Wrapper">
-              {
+            {
               chat? <>
+            <div className="Display-Wrapper">
+          
               <h3>{chat.type+" Room "+chat.name}</h3> 
                <Chat chat={chat} setChat={setChat} publicRooms={publicRooms} setPublicRooms={setPublicRooms} />
-                </>:null}
+              
             </div>
+              </>:null}
           </>
-        ) : <h2>Under construction</h2>}
+        ) :<h2>Under construction</h2>}
     </>
   );
   

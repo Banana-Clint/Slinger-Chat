@@ -59,8 +59,9 @@
     text-transform: uppercase;
     font-weight: bold;
     color: #00c800;
-    border: 2px solid white;
-    
+
+    border:2px solid #00ff00; 
+    animation: neon-pulse 2s ease-in-out infinite alternate;    
 }
 .Join-Room{
     display: flex;
@@ -126,9 +127,7 @@
     align-items: center;
 }
 .NavButtons-Wrapper button{
-    border: 6px solid black;
-    width: 21%;
-    border-radius: 70%;
+    border-radius: 50%;
     padding: 0;
     position: relative;
 }
@@ -139,8 +138,10 @@
     font-size: 8px;
 }
 .NavButtons-Wrapper button img{
-    height: 100%;
-    width: 100%;
+    width:clamp(60px,10vw,50px);
+    border-radius: 50%;
+    margin-bottom: -7px;
+    padding: 0;
 }
 @media only screen and (max-width:950px){
     .Dashboard{
@@ -154,6 +155,7 @@
         border: none;
         animation: none;
         width: 100%;
+        padding:50px 0 ;
     }
     .NavButtons-Wrapper{
         width: 70%;
