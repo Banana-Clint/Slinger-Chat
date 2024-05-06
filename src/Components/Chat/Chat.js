@@ -1,14 +1,19 @@
 import './Chat.css'
-import { useState } from 'react'
+import React, { useEffect, useRef, useState  } from 'react';
 
 
 
 
 export default function Chat({chat,setChat,publicRooms,setPublicRooms}){
   const[isTyping,setIsTyping]=useState(false)
-
-    const[textMessage,setTextMessage]=useState('')
-    const messageChange=(e)=>{
+  const[textMessage,setTextMessage]=useState('')
+  const messagesEndRef = useRef(null);
+  
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chat]);
+  
+  const messageChange=(e)=>{
       if(isTyping===true){
         setTextMessage(e.target.value)
         setTimeout (()=>setIsTyping(false),4000)
@@ -37,17 +42,20 @@ export default function Chat({chat,setChat,publicRooms,setPublicRooms}){
       };
       
 
-return(
-    <div className="Chat-Wrapper">
-        <ul>
-        {chat?chat.messages.map((message,i)=>{
-            return(<li  key={i}>{"("+message.timestamp+")"}<p><b>{message.sender+": "}</b>{message.message} </p></li>)
-        }):null}
-        {isTyping?<p>Paul is typing...</p>:null}</ul>
-        <input type='textArea' value={textMessage} onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>
-            
-    </div>
-)
+      return(
+        <div className="Chat-Wrapper">
+            <ul>
+            {chat?chat.messages.map((message,i)=>{
+                return(<li  key={i}>{"("+message.timestamp+")"}<p><b>{message.sender+": "}</b>{message.message} </p></li>)
+            }):null}
+            {isTyping?<p>Paul is typing...</p>:null}
+            <div ref={messagesEndRef} />
+            </ul>
+            <input type='textArea' value={textMessage} onChange={(e)=>{messageChange(e)}} onKeyDown={addMessage }/>
+        </div>
+    )
+
+    
 
 
 }

@@ -1,8 +1,7 @@
 
 .Lobby-Wrapper{
     width: 100%;
-    padding: 0;
-    margin: 0;
+
     font-family: "Press Start 2P",sans-serif;
     color:white;
     display: flex;
@@ -63,7 +62,7 @@
     font-size: clamp(13px, 2vw, 17px);
 }
 
-@media only screen and (max-width:700px){
+@media only screen and (max-width:950px){
 
 
     .Lobby-Wrapper{

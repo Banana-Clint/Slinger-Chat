@@ -7,7 +7,6 @@
     width: 100%;
     justify-content:flex-start;
     justify-self: flex-start;
-    max-height: 50vh;
     margin: 0;
     padding: 0;
     
@@ -21,8 +20,9 @@
 }
 .User-Image-Wrapper img{
     display: flex;
-    height: 36vh;
-    margin: 0;
+    min-height: 30vh;
+    max-height: 36vh;
+    margin-top: -20px;
     padding: 0;
 
 }
@@ -38,7 +38,7 @@
 .User-Head span{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     font-size:  clamp(9px, 3.5vw, 15px);
     color:gold;
     margin: 0;
