@@ -82,6 +82,8 @@
     font-family: "Press Start 2P",sans-serif;
     text-align: center;
     width: 100%;
+    border:2px solid #00ff00; 
+    animation: neon-pulse 2s ease-in-out infinite alternate;    
 }
 .Input-Wrapper input::placeholder{
         color: #00c800;
