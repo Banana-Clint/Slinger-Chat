@@ -23,7 +23,7 @@ return (
             <h3 style={{ letterSpacing: "-2px", wordSpacing: "-9px" }}>Get a room ?</h3>
             </div>
             <div className="Elements">
-              <h5 style={{color:"#00c800"}}>Our Public Lobby:</h5>
+              <h5 style={{color:"#00c800"}}>Our Public Lobbies:</h5>
             {publicRooms
               ? publicRooms.map((room,roomIndex) => (
                 

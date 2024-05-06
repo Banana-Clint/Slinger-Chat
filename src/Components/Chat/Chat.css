@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 67vh;;
-    width: 95.5%;
+    height: 67vh;
+    width: 100%;
     padding: 0;
     padding-bottom: 10px;
     margin: 0;
@@ -13,7 +13,7 @@
 .Chat-Wrapper ul {
     padding: 0;
     margin: 0;
-    max-width: 60vw;
+    max-width: 45vw;
     overflow-y: auto; 
     scrollbar-width: 30px; 
     scrollbar-color: #00c800 transparent;
@@ -46,7 +46,7 @@
 
 .Chat-Wrapper li p{
     
-    max-width: 35vw; /* Adjust this value according to your needs */
+    max-width: 31vw; 
     word-wrap: break-word;
     text-align: left;
     padding: 5px;
@@ -65,7 +65,7 @@
     color: #00c800;
 }
 .Chat-Wrapper input{
-    width: 45vw;
+    width: 38vw;
     height: 20%;
     border:5px solid #00c800;
     min-height:80px;
