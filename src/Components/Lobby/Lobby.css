@@ -6,6 +6,7 @@
     font-family: "Press Start 2P",sans-serif;
     color:white;
     display: flex;
+    min-height: 40vh;
     
 }
 .Elements-Wrapper {

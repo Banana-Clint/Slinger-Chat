@@ -3,30 +3,36 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 90%;;
+    height: 67vh;;
     width: 95.5%;
     padding: 10px;
+    margin: 0;
 
 }
 .Chat-Wrapper ul {
     padding: 0;
-    width: 90%;
-    max-height: 40vh; /* Maximum height of the ul */
+    max-width: 60vw;
     overflow-y: auto; /* Enable vertical scrolling when necessary */
     scrollbar-width: 30px; /* Adjust the scrollbar width */
     scrollbar-color: #00c800;
     
   }
   .Chat-Wrapper ul p{ font-size: 10px; word-spacing: -6px;}
-.Chat-Wrapper li{
+  .Chat-Wrapper li {
     display: flex;
-    padding: 0;
+    padding: 10px;
     margin: 0;
     align-items: center;
+    justify-content: center;
     font-size: 12px;
     list-style: none;
 }
-.Chat-Wrapper li p{text-align: left;
+
+.Chat-Wrapper li p{
+    
+    max-width: 45vw; /* Adjust this value according to your needs */
+    word-wrap: break-word;
+    text-align: left;
     padding: 5px;
     background-color: white;
     border:5px solid #00c800;
@@ -37,11 +43,12 @@
     letter-spacing: -0.7px;
     word-spacing: -2px;
 }
+
 .Chat-Wrapper li p b{
     color: #00c800;
 }
 .Chat-Wrapper input{
-    width: 100%;
+    width: 50vw;
     height: 20%;
     border:5px solid #00c800;
     min-height:80px;
@@ -51,4 +58,16 @@
     line-height: 2;
     text-align: center;
 
+}
+@media only screen and (max-width:700px){
+    .Chat-Wrapper ul {
+        max-width: 70vw;
+    }
+    .Chat-Wrapper{
+        padding: 0;
+      border: 2px solid yellow;
+    }
+    .Chat-Wrapper input{
+        width: 70vw;
+    }
 }

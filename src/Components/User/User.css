@@ -2,24 +2,28 @@
 
 
 .User-Wrapper{
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content:flex-start;
     justify-self: flex-start;
+    max-height: 50vh;
+    margin: 0;
+    padding: 0;
     
     font-family: "Press Start 2P",sans-serif;
 }
 .User-Image-Wrapper{
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    margin: 0;
 }
 .User-Image-Wrapper img{
     display: flex;
-    margin-top: -14px;
+    height: 36vh;
+    margin: 0;
+    padding: 0;
 
 }
 .User-Head{
