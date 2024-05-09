@@ -13,12 +13,13 @@
     justify-content: space-between;
 }
 .Navbar{
-  
+  width: 95vw;
 }
 
 .Navbar-List{
     display: flex;
     align-items: center;
+    justify-content:flex-start;
     gap: 15px;
     list-style: none;
     
@@ -51,19 +52,26 @@
 .Navbar-Button:hover{
     transform: scale(1.1);
 }
-@media only screen and (max-width:600px){
+@media only screen and (max-width:650px){
+    .Navbar-List{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 15px;
+        list-style: none;
+        
+    }
 
     #Navbar-List_p{
         display: none;
     }
     .Header-Wrapper{
         justify-content: space-between;
-        padding-right: 30px;
 
     }
-    .Navbar-List{
-        padding-left: 100px;
-    }
+    .Navbar-Button{
+    
+    }   
 }
 @media only screen and (max-width:400px){
     .Navbar-Button{
