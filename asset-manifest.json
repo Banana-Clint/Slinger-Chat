@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Slinger-Chat/static/css/main.e7705482.css",
+    "main.css": "/Slinger-Chat/static/css/main.afb20222.css",
     "main.js": "/Slinger-Chat/static/js/main.e219a901.js",
     "static/media/logo.png": "/Slinger-Chat/static/media/logo.eaf61da4591045dc34d6.png",
     "static/media/Cowboy Hat.png": "/Slinger-Chat/static/media/Cowboy Hat.59705273bcd6022f42a3.png",
@@ -8,11 +8,11 @@
     "static/media/sky.jpg": "/Slinger-Chat/static/media/sky.ff13b7f0761b56f21524.jpg",
     "static/media/Lobby.png": "/Slinger-Chat/static/media/Lobby.0e5b91ccd27a232d5903.png",
     "index.html": "/Slinger-Chat/index.html",
-    "main.e7705482.css.map": "/Slinger-Chat/static/css/main.e7705482.css.map",
+    "main.afb20222.css.map": "/Slinger-Chat/static/css/main.afb20222.css.map",
     "main.e219a901.js.map": "/Slinger-Chat/static/js/main.e219a901.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7705482.css",
+    "static/css/main.afb20222.css",
     "static/js/main.e219a901.js"
   ]
 }
