@@ -37,16 +37,13 @@
 
 
 .Dashboard-Tools{
-    width: 30vw;
-    margin: 0;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    border-right: 10px solid #00ff00; 
     padding: 0;
     justify-content: flex-start;
-    animation: neon-pulse 2s ease-in-out infinite alternate;
 }
 .Dashboard-Tools button{
     background-color: transparent;
@@ -123,6 +120,7 @@
 }
 .NavButtons-Wrapper{
     display: flex;
+    flex-direction: column;
     width: 100%;
     gap: 7px;
     justify-content: center;

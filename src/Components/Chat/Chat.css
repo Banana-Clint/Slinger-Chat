@@ -8,24 +8,27 @@
     padding: 0;
     padding-bottom: 10px;
     margin: 0;
+    gap: 10px;
 
 }
 .Chat-Wrapper ul {
     padding: 0;
     margin: 0;
-    max-width: 45vw;
     overflow-y: auto; 
     scrollbar-width: 30px; 
-    scrollbar-color: #00c800 transparent;
 }
 
 .Chat-Wrapper ul::-webkit-scrollbar {
-    width: 30px;
+    width: 20px;
+    
 }
 
 .Chat-Wrapper ul::-webkit-scrollbar-thumb {
     background-color: #00c800;
-    border-radius: 15px;
+    border-radius: 5px!important;
+}
+.Chat-Wrapper ul::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
 }
 
 .Chat-Wrapper ul::-webkit-scrollbar-track {
@@ -46,7 +49,7 @@
 
 .Chat-Wrapper li p{
     
-    max-width: 28vw; 
+    max-width: 53vw; 
     word-wrap: break-word;
     text-align: left;
     padding: 5px;
@@ -65,7 +68,7 @@
     color: #00c800;
 }
 .Chat-Wrapper input{
-    width: 37vw;
+    width: 60vw;
     height: 20%;
     border:5px solid #00c800;
     min-height:80px;
