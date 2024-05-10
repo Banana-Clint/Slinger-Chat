@@ -6,20 +6,20 @@
     margin:0;
     display: flex;
     height: 80px;
-    padding-right: 30px;
     align-items: center;
     background-color: transparent;
     text-transform: uppercase;
     justify-content: space-between;
+    width: 97.5vw;
 }
 .Navbar{
-  width: 95vw;
+  width: 100vw;
 }
 
 .Navbar-List{
     display: flex;
     align-items: center;
-    justify-content:flex-start;
+    justify-content:space-between;
     gap: 15px;
     list-style: none;
     
@@ -80,7 +80,6 @@
         max-width: 120px;
     }
     .Header-Wrapper{
-        padding-right: 19px;
 
     }
 }
