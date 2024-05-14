@@ -1,55 +1,49 @@
 
 import"./Room.css"  
-// import User from "../User/User.js"
 import { useState } from "react"
 import Mail from '../Images/Mail Box.png' 
-import LobbyImg from '../Images/Lobby.png' 
-import Lobby from "../Lobby/Lobby.js"
+import Chat from "../Chat/Chat.js"
+import User from "../User/User.js"
 export default function Room(){
 
 
-    const [user]=useState("Paul Walker");
-    const [lobbyType,setLobbyType]=useState("Public-Messages")
-
-
+    const[publicRooms,setPublicRooms]=useState([{name:"En",type:"Public",members:null,image:require("../Images/UK.png"),
+messages:[{message:'Hello and welcome to the english speaking room.',sender:"Founder",timestamp:"10:30"}]} ]);
+const[chat,setChat]=useState(null);
 
     return(
     <div className="Room-Wrapper">
         <div className="Dashboard-Wrapper">
         <div className="Dashboard">
         <div className="Dashboard-Tools">
-   {/* {     <User username={user} />
-        <button>+friend+</button>
-        <div className="Join-Room">
-            <div className="Input-Wrapper">
-        <input type= "text" placeholder="ROOM" /> </div>
-                    <div className="Buttons-Wrapper"> <button>Join</button> <button id="addRoomButton">+</button></div>
-        
-            </div>} */}
-            <div className="NavButtons-Wrapper"><button onClick={()=>setLobbyType('Direct-Messages')}><img src={Mail}/> <span style={{
-            position: 'absolute', 
-            top: '50%', 
-            left: '50%', 
-            transform: 'translate(-50%, -50%)',
-            color: 'white'
-        }}>Mess
+            <div className="NavButtons-Wrapper">
+                    <button >
+            <p style={{width:"clamp(60px,10vw,50px)",fontSize:"30px",margin:"0" }}>+</p>
+         </button>
+                <button ><img src={Mail} alt="Non"/> 
+            <span >Mess
              ages
         </span></button>
-        <button onClick={()=>setLobbyType("Public-Messages")}><img src={LobbyImg}/> <span style={{
-            position: 'absolute', 
-            top: '50%', 
-            left: '50%', 
-            transform: 'translate(-50%, -50%)',
-            color: 'white'
-        }}>Lobby
-        </span></button>  </div>
-            </div>        
-            <div className="Lobby-Wrapper" >
-            <Lobby type={lobbyType}/>
-            </div>
+            {publicRooms
+              ? publicRooms.map((room,roomIndex) => (
+                
+                 <button key={roomIndex} ><img src={room.image} alt={room.name} /> <span 
+                 onClick={()=>setChat(room)}> {room.name}</span>
+                </button>
+                ))
+              : null}
             </div> 
-      
-    
+            </div>        
+            {
+              chat? <>
+            <div className="Display-Wrapper">
+          
+              <h3>{chat.type+" Room "+chat.name}</h3> 
+               <Chat chat={chat} setChat={setChat} publicRooms={publicRooms} setPublicRooms={setPublicRooms} />
+              
+            </div>
+              </>:<User/>}
+            </div> 
         </div>
 
     </div>
