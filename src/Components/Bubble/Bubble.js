@@ -2,7 +2,7 @@ import TextTyper from '../TextTyper/TextTyper';
 import React, { useEffect, useState } from 'react';
 import "./Bubble.css";
 const Bubble = () => {
-    const [text, setText] = useState(["all men must server !", "Fear not ! young'un !", "My creator needs a Job...",
+    const [text] = useState(["all men must server !", "Fear not ! young'un !", "My creator needs a Job...",
     "jeez!! somebody died in here?","smells like teen spirit!","cease fire now !"]);
     const [index, setIndex] = useState(0);
     const [startRendering,sestStartRendering]=useState(false)
@@ -33,7 +33,8 @@ const Bubble = () => {
 
     return (
         <div id="Bubble">
-            {startRendering && <p style={{lineHeight:2}}><TextTyper
+            {startRendering && <p style={{lineHeight:2}}>
+                <TextTyper
                 key={index}
                 TextToType={text[index]}
                 onFinishedTyping={HideSelf}

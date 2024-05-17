@@ -32,7 +32,7 @@
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    gap: 14vw;
+    gap: 10px;
     border: 10px solid #00ff00; 
     animation: neon-pulse 2s ease-in-out infinite alternate;
 }
@@ -46,10 +46,14 @@
     gap: 5px;
     padding: 0;
     justify-content: flex-start;
+    width: 4vw;
 }
 
 
-
+.popUp{
+    font-family: "Press Start 2P",sans-serif;
+    height: 5vh;
+}
 
 .NavButtons-Wrapper{
     display: flex;
@@ -62,7 +66,6 @@
 .NavButtons-Wrapper button{
     background-color: transparent;
     line-height: 2;
-    border:none ;
     font-family: "Press Start 2P",sans-serif;
     cursor: pointer;
     font-size: 12px;
@@ -74,6 +77,9 @@
     border-radius: 50%;
     padding: 0;
     position: relative;
+    width:clamp(60px,10vw,50px);
+    height:clamp(60px,10vw,50px) ;
+    
 }
 .NavButtons-Wrapper button:hover{transform: scale(1.05);}
 .NavButtons-Wrapper button span{
@@ -88,10 +94,16 @@
    
 }
 .NavButtons-Wrapper button img{
-    width:clamp(60px,10vw,50px);
+    width:clamp(40px,10vw,50px);
     border-radius: 50%;
-    margin-bottom: -7px;
+    margin-bottom: -5px;
     padding: 0;
+}
+.Display-Wrapper{
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 @media only screen and (max-width:950px){
     .Dashboard{
