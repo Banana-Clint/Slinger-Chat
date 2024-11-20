@@ -4,7 +4,7 @@ This is a web application code base built with **ReactJs**, **ThreeJs**, **ES6**
 
 ## Live Demo
 
-You can find the live demo of the UI for this full-stack project here: https://banananaklith.github.io/Slinger-Chat
+You can find the live demo of the UI for this full-stack project here: https://banana-clint.github.io/Slinger-Chat
 
 ## Getting Started
 
